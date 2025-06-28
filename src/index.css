@@ -43,7 +43,7 @@ body {
   display: flex;
 }
 .btn-gradient {
-  background: linear-gradient(-235deg, #e94cfe, #d6bfe7, #1f08a6);
+  background: linear-gradient(-235deg ,#671AE4,#B75CFF);
   color: black;
 }
 /* .inner-box {
