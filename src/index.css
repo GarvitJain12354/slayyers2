@@ -43,8 +43,8 @@ body {
   display: flex;
 }
 .btn-gradient {
-  background: linear-gradient(-235deg ,#671AE4,#B75CFF);
-  color: black;
+  background: linear-gradient(-235deg, #671ae4, #b75cff);
+  color: white;
 }
 /* .inner-box {
   background-color: white;
@@ -89,4 +89,21 @@ body {
 
 .pop {
   font-family: pop;
+}
+
+.gradient {
+  background: linear-gradient(
+    to bottom,
+    #f14c78 ,
+    #6e00a57f ,
+    #000000 
+  );
+}
+.hyper h2{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.hyper h3{
+  font-weight: 100;
+  font-size: 1.2rem;
 }
