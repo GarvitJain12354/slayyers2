@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,15 +11,21 @@ const Navbar = () => {
           {/* <NavLink to={"/"}>For Creator</NavLink>
           <NavLink to={"/"}>For Brands</NavLink>
           <NavLink to={"/"}>Contact Us</NavLink> */}
-          <a href="/" className="font-[#FFFFFF] text-base opacity-45">
+          <NavLink
+            to="/creator"
+            className="font-[#FFFFFF] text-base opacity-45"
+          >
             For Creator
-          </a>
-          <a href="/" className="font-[#FFFFFF] text-base opacity-45">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="font-[#FFFFFF] text-base opacity-45"
+          >
             For Brands
-          </a>
-          <a href="/" className="font-[#FFFFFF] text-base opacity-45">
+          </NavLink>
+          <NavLink to="/brands" className="font-[#FFFFFF] text-base opacity-45">
             Contact Us
-          </a>
+          </NavLink>
         </div>
       </div>
       <div></div>
