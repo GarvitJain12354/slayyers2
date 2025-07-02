@@ -92,18 +92,22 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(
-    to bottom,
-    #f14c78 ,
-    #6e00a57f ,
-    #000000 
-  );
+  background: linear-gradient(to bottom, #f14c78, #6e00a57f, #000000);
 }
-.hyper h2{
+.hyper h2 {
   font-weight: 600;
   font-size: 1.5rem;
 }
-.hyper h3{
+.hyper h3 {
   font-weight: 100;
   font-size: 1.2rem;
+}
+.lg {
+  background: linear-gradient(to right, #ed24ff5b, #00000000 40%);
+}
+.lgr {
+  background: linear-gradient(to left, #ed24ff5b, #00000000 50%);
+}
+.create-btn {
+  background: linear-gradient(to bottom, #b75cff, #671ae4);
 }
