@@ -111,3 +111,13 @@ body {
 .create-btn {
   background: linear-gradient(to bottom, #b75cff, #671ae4);
 }
+@media (max-width: 678px) {
+  .card-swiper-container {
+    height: 50vh;
+  }
+  .card-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

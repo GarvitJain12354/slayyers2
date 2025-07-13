@@ -37,12 +37,14 @@ import Brands from "./Pages/Brands.jsx";
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" index element={<Home />} />
-        <Route path="/creator" element={<Creators />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/brands" element={<Brands />} />
-      </Routes>
+      <div className="w-full relative overflow-hidden">
+        <Routes>
+          <Route path="/" index element={<Home />} />
+          <Route path="/creator" element={<Creators />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/brands" element={<Brands />} />
+        </Routes>
+      </div>
       {/* <Page1 />
       <Page2 />
       {creatorData?.map((i) => (

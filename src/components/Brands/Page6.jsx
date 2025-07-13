@@ -2,13 +2,15 @@ import React from "react";
 
 const Page6 = () => {
   return (
-    <div className="w-full h-screen gradient mont flex flex-col gap-4 items-center py-10">
-      <h1 className="mont text-5xl font-extrabold text-center">
+    <div className="w-full gradient mont flex flex-col gap-4 items-center py-10 max-md:min-h-screen">
+      <h1 className="mont text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center leading-snug">
         Hyperlocal Warehousing & <br /> Efficient Logistics
       </h1>
       <div className="flex items-center justify-between w-[80%]">
         <div className="flex flex-col">
-          <h1 className="text-4xl font-semibold uppercase">Services Offered</h1>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold uppercase">
+            Services Offered
+          </h1>
           <div className="flex flex-col items-start hyper ml-7 mt-4">
             <h2>Hyperlocal Warehousing:</h2>
             <h3>Store inventory closer to customers</h3>
@@ -25,7 +27,7 @@ const Page6 = () => {
             </h3>
           </div>
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 max-md:hidden">
           <img src="/hyper1.png" alt="" />
           <img src="/hyper2.png" alt="" />
           <img src="/hyper3.png" alt="" />

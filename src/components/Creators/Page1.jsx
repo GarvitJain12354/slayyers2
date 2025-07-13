@@ -6,21 +6,21 @@ const Page1 = () => {
     <>
       <Navbar />
       <div
-        className="w-full h-screen flex relative overflow-hidden
+        className="w-full h-screen flex relative overflow-hidden max-md:flex-col  max-md:mt-[10vh]
     "
       >
-        <div className="w-1/2 h-full flex flex-col items-start px-10 justify-center gap-2">
-          <h1 className="text-4xl font-extralight light italic">
+        <div className="w-1/2 h-full flex flex-col max-md:w-full items-start px-10 justify-center gap-2 max-md:h-1/2 ">
+          <h1 className="text-xl sm:text-2xl lg:text-4xl font-extralight italic">
             Turn Your Fashion Influence into Revenue
           </h1>
-          <h1 className="text-5xl uppercase font-extrabold mont w-full">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl uppercase font-extrabold mont">
             Join India's Most Creator-Friendly Fashion Platform
           </h1>
           <p className="text-2xl font-extrabold mt-4 text-[#A1A1AA] mont">
             Monetize Your Style Expertise with Slayyers
           </p>
         </div>
-        <div className="w-1/2 h-full flex flex-col items-center justify-center text-6xl relative">
+        <div className="w-1/2 h-full flex flex-col items-center justify-center text-6xl relative max-md:w-full max-md:h-1/2">
           <img
             src="/bgColor.png"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
@@ -32,7 +32,7 @@ const Page1 = () => {
             alt=""
           />
         </div>
-        <h3 className="absolute left-1/2 bottom-10 -translate-x-1/2 text-center">
+        <h3 className="absolute left-1/2 bottom-10 -translate-x-1/2 text-center max-md:relative max-md:w-[90%]">
           Ready to transform your fashion content into a profitable business?
           Whether you're a fashion blogger, style influencer, or lifestyle
           content creator, Slayyers offers the perfect platform to monetize your

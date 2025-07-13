@@ -28,15 +28,20 @@ const Page5 = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col min-h-screen items-center justify-center">
-      <img src="/Streamlined.png" className="object-contain mt-20" alt="" />
-      <div className="w-[80%] flex flex-col items-center justify-center ">
+    <div className="w-full flex flex-col min-h-screen items-center justify-center max-md:pb-10">
+      <img src="/Streamlined.png" className="object-contain mt-20 max-md:w-[80%]" alt="" />
+      <div className="w-full max-w-6xl flex flex-col items-center justify-center gap-10 mt-10 max-md:px-10 max-md:gap-12"  >
         {data?.map((i) => (
-          <div className="w-full pop flex items-center justify-between gap-4">
-            <h1 className="text-8xl font-extrabold">{i.number}</h1>
+          <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 max-md:gap-2">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-extrabold ">
+              {i.number}
+            </h1>
             <div className="flex flex-col">
-              <h1 className="text-2xl font-semibold">{i.title}</h1>
-              <p className="text-xl font-extralight mont w-[90%]">{i.desc}</p>
+              <h1 className="text-xl sm:text-2xl font-semibold"> {i.title}</h1>
+              <p className="text-sm sm:text-base lg:text-lg font-light mont mt-2">
+                {" "}
+                {i.desc}
+              </p>
             </div>
             <img src={i.img} alt="" />
           </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Page4 = () => {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-start py-10 gap-20 relative">
-      <h1 className="pop relative z-20 font-extrabold text-6xl">
+      <h1 className="font-extrabold text-center pop text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight z-20 max-w-[90%]">
         Slayyers = Instagram Reels + BlinkIt + Myntra
       </h1>
       {/* <div className="flex items-center justify-between w-full relative z-20">

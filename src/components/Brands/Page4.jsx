@@ -40,10 +40,10 @@ const Page4 = () => {
         <div className="w-full min-h-screen rounded-xl flex items-center justify-center flex-col bg-white">
           <img
             src="/why.png"
-            className="bg-black px-4 py-2 rounded-3xl rounded-t-none"
+            className="bg-black px-4 py-2 rounded-3xl rounded-t-none max-md:rounded-none"
             alt=""
           />
-          <div className="grid grid-cols-3 w-[80%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
             {data?.map((i) => (
               <WhyCard data={i} />
             ))}

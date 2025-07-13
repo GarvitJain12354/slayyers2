@@ -14,11 +14,10 @@ const Page2 = () => {
     <div className="w-full min-h-screen relative">
       <img src="/orangeBg.png" className="h-full w-full" alt="" />
       <div className="w-full absolute top-0 flex flex-col items-center justify-center pt-10">
-        <h1 className="pop font-extrabold uppercase text-7xl">
-          {" "}
+        <h1 className="pop font-extrabold uppercase text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight">
           Instagram is the mall.
         </h1>
-        <h2 className="pop font-extrabold uppercase text-lg">
+        <h2 className="pop font-medium mt-2 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl text-center">
           Reels are the new mannequins. And Gen Z? They're not shopping —
           they're slaying.
         </h2>

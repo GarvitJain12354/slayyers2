@@ -2,44 +2,69 @@ import React from "react";
 
 const Page3 = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center gap-10 relative">
-      <h1 className="pop relative z-20 font-extrabold text-[50px]">
+    <div className="w-full min-h-screen flex flex-col items-center gap-10 py-12 px-4 sm:px-6 lg:px-20 relative">
+      <h1 className="pop z-20 font-extrabold text-3xl sm:text-4xl lg:text-[50px] text-center">
         Categories
       </h1>
 
-      <div className="flex flex-wrap   w-[80%] place-items-center place-content-center gap-10 gap-y-5 py-1.5">
-        <div className="flex flex-col shrink-0 gap-3">
-          <img className="w-[300px] h-[189.33px]" src="/clothes.png" alt="" />
-          <button className="pop relative z-20 bg-white flex items-center justify-center rounded-3xl px-4 py-2 text-[#4000FF] pop font-extrabold gap-2">
-            Clothing/Apparels
+      <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 w-full max-w-7xl">
+        {/* Card 1 */}
+        <div className="flex flex-col items-center gap-3 max-w-xs">
+          <img
+            className="w-full object-contain rounded-md"
+            src="/clothes.png"
+            alt="Clothing"
+          />
+          <button className="pop bg-white rounded-3xl px-4 py-2 text-[#4000FF] font-extrabold text-sm sm:text-base">
+            Clothing / Apparels
           </button>
         </div>
 
-        <div className="flex flex-col shrink-0 gap-3">
-          <img src="/footwear.png" alt="" />
-          <button className="pop relative z-20 bg-white flex items-center justify-center rounded-3xl  py-2 text-[#4000FF] pop font-extrabold gap-2">
-            Footwear and Lifestyle
+        {/* Card 2 */}
+        <div className="flex flex-col items-center gap-3 max-w-xs">
+          <img
+            className="w-full object-contain rounded-md"
+            src="/footwear.png"
+            alt="Footwear"
+          />
+          <button className="pop bg-white rounded-3xl px-4 py-2 text-[#4000FF] font-extrabold text-sm sm:text-base text-center">
+            Footwear & Lifestyle
           </button>
         </div>
 
-        <div className="flex flex-col shrink-0 gap-3">
-          <img src="/Group.png" alt="" />
-          <button className="pop relative z-20 bg-white flex items-center justify-center rounded-3xl px-4 py-2 text-[#4000FF] pop font-extrabold gap-2">
-            Accessories and Jwellery
+        {/* Card 3 */}
+        <div className="flex flex-col items-center gap-3 max-w-xs">
+          <img
+            className="w-full object-contain rounded-md"
+            src="/Group.png"
+            alt="Accessories"
+          />
+          <button className="pop bg-white rounded-3xl px-4 py-2 text-[#4000FF] font-extrabold text-sm sm:text-base text-center">
+            Accessories & Jewellery
           </button>
         </div>
 
-        <div className="flex flex-col shrink-0  gap-3">
-          <img src="/Objects.png" alt="" />
-          <button className="pop relative z-20 bg-white flex items-center justify-center rounded-3xl px-4 py-2 text-[#4000FF] pop font-extrabold gap-2">
-            Beauty and Personal Care
+        {/* Card 4 */}
+        <div className="flex flex-col items-center gap-3 max-w-xs">
+          <img
+            className="w-full object-contain rounded-md"
+            src="/Objects.png"
+            alt="Beauty"
+          />
+          <button className="pop bg-white rounded-3xl px-4 py-2 text-[#4000FF] font-extrabold text-sm sm:text-base text-center">
+            Beauty & Personal Care
           </button>
         </div>
 
-        <div className="flex flex-col shrink-0  gap-3">
-          <img src="/design.png" alt="" />
-          <button className="pop relative z-20 bg-white flex items-center justify-center rounded-3xl px-4 py-2 text-[#4000FF] pop font-extrabold gap-2">
-            Designer Labelled Brands
+        {/* Card 5 */}
+        <div className="flex flex-col items-center gap-3 max-w-xs">
+          <img
+            className="w-full object-contain rounded-md"
+            src="/design.png"
+            alt="Designer Brands"
+          />
+          <button className="pop bg-white rounded-3xl px-4 py-2 text-[#4000FF] font-extrabold text-sm sm:text-base text-center">
+            Designer Labelled Brands
           </button>
         </div>
       </div>
@@ -48,8 +73,3 @@ const Page3 = () => {
 };
 
 export default Page3;
-
-// <button className="pop relative z-20 bg-white flex items-center justify-center rounded-md px-4 py-2 text-[#007AFF] pop font-extrabold gap-2">
-//       <img src="/send.png" alt="" />
-//       Get Early Access
-//     </button>
