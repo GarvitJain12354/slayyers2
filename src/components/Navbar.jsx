@@ -79,11 +79,11 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay - completely hidden on desktop */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-gradient-to-r from-zinc-900 to-zinc-800 transform ${
+        className={`fixed inset-y-0 left-0 w-64 bg-gradient-to-r from-zinc-800 via-zinc-900 to-gray-800 transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden transition-transform duration-300 ease-in-out z-40`}
       >
-        <div className="flex flex-col items-start justify-center h-full pl-10 space-y-8">
+        <div className="flex flex-col items-start justify-start pt-10 h-full pl-10 space-y-8">
           <NavLink
             to="/creator"
             className="text-white text-xl opacity-45 hover:opacity-100 transition-opacity"

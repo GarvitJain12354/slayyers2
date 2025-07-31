@@ -1,9 +1,32 @@
 
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
+import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 
+
+import ladka1 from "../../../public/ladka1.png";
+import ladka2 from "../../../public/ladka2.png";
+import ladka3 from "../../../public/ladka3.png";
+import { MotionConfig } from "framer-motion";
 const Page1 = () => {
+  
+
+ const [activeIndex, setActiveIndex] = useState(0);
+  const images = [ladka1, ladka2, ladka3];
+
+  // Positions for the images (center, left, right)
+  const positions = [
+    { scale: 1.1, zIndex: 30, x: "-50%", y: "-50%", rotateY: 0 }, // center
+    { scale: 0.9, zIndex: 20, x: "-80%", y: "-50%", rotateY: -15 }, // left
+    { scale: 0.9, zIndex: 20, x: "-20%", y: "-50%", rotateY: 15 }  // right
+  ];
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
     <>
       <Navbar />
@@ -62,21 +85,96 @@ const Page1 = () => {
               <span className="ml-1 text-[#A1A1AA] text-sm xs:text-base sm:text-lg md:text-xl">(14k Reviews)</span>
             </div>
           </div>
+
         </div>
 
-        {/* Right Section */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center relative min-h-[300px] xs:min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
-          <img
-            src="/bgColor.png"
-            className="absolute w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            alt="Background Color"
-          />
-          <img
-            src="/page1bg.png"
-            className="absolute w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            alt="Page Background"
-          />
-        </div>
+       
+  <div className="w-full lg:w-1/2 flex items-center justify-center relative min-h-[300px] xs:min-h-[350px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
+     
+      <img
+        src="/bgColor.png"
+        className="absolute w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        alt="Background Color"
+      />
+
+   <div className="relative w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-30 md:top-70 left-110 md:left-120 transform -translate-x-1/2 -translate-y-1/2">
+  <AnimatePresence>
+    {images.map((img, index) => {
+      const positionIndex = (index - activeIndex + images.length) % images.length;
+      
+      // Responsive positions - different for mobile vs larger screens
+      const positions = [
+        { // Center position
+          scale: 1.2, 
+          zIndex: 30, 
+           x: window.innerWidth < 768 ? "-150%" : "-50%",
+          // x: "-50%", 
+          y: "-50%", 
+          rotateY: 0,
+          opacity: 1
+        }, 
+        { // Left position - closer on mobile
+          scale: window.innerWidth < 768 ? 0.9 : 0.85, 
+          zIndex: 20, 
+          x: window.innerWidth < 768 ? "-300%" : "-150%",
+          y: "-50%", 
+          rotateY: window.innerWidth < 768 ? -15 : -25,
+          opacity: 0.9
+        }, 
+        { // Right position - closer on mobile
+          scale: window.innerWidth < 768 ? 0.9 : 0.85, 
+          zIndex: 20, 
+          x: window.innerWidth < 768 ? "-150%" : "20%",
+          y: "-50%", 
+          rotateY: window.innerWidth < 768 ? 15 : 25,
+          opacity: 0.9
+        }
+      ];
+      
+      const position = positions[positionIndex];
+      
+      return (
+        <motion.img
+          key={index}
+          src={img}
+          alt={`Ladka ${index + 1}`}
+          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer 
+            ${
+              positionIndex === 0 
+                ? 'w-[180px] sm:w-[240px] md:w-[300px] lg:w-[350px] xl:w-[400px] 2xl:w-[450px]' 
+                : 'w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] xl:w-[280px] 2xl:w-[300px]'
+            }`
+          }
+          initial={false}
+          animate={{
+            scale: position.scale,
+            zIndex: position.zIndex,
+            x: position.x,
+            y: position.y,
+            rotateY: position.rotateY,
+            filter: positionIndex === 0 
+              ? 'brightness(1.2) drop-shadow(0 10px 15px rgba(0,0,0,0.3))' 
+              : 'brightness(0.85) drop-shadow(0 5px 8px rgba(0,0,0,0.2))',
+            opacity: position.opacity
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 120,
+            damping: 20,
+            duration: 0.6
+          }}
+          onClick={() => handleClick(index)}
+          whileHover={{ 
+            scale: position.scale * 1.08,
+            transition: { duration: 0.2 }
+          }}
+        />
+      );
+    })}
+  </AnimatePresence>
+</div>
+    </div>
+
 
         {/* Background Circle */}
         <img

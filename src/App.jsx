@@ -19,6 +19,8 @@ import Home from "./Pages/Home.jsx";
 import Creators from "./Pages/Creators.jsx";
 import Contact from "./Pages/Contact.jsx";
 import Brands from "./Pages/Brands.jsx";
+import ContactForm from "./components/Contact/ContactForm.jsx";
+import BrandForm from "./components/Brands/BrandForm.jsx";
 // import Page1 from "./components/Brands/Page1";
 // import Page2 from "./components/Brands/Page2";
 // import Page3 from "./components/Page1/Page3";
@@ -42,6 +44,8 @@ const App = () => {
           <Route path="/" index element={<Home />} />
           <Route path="/creator" element={<Creators />} />
           <Route path="/contact" element={<Contact />} />
+         <Route path="/contactform" element={<ContactForm />} />
+          <Route path="/brandform" element={<BrandForm />} />
           <Route path="/brands" element={<Brands />} />
         </Routes>
       </div>

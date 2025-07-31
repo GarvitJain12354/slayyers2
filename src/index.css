@@ -15,6 +15,11 @@
   font-family: pop;
   src: url("/Poppins-Regular.ttf");
 }
+
+.pop{
+   font-family: pop;
+  src: url("/Poppins-Regular.ttf");
+}
 html,
 body {
   font-family: IBM;

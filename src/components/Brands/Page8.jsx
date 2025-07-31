@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Page8 = () => {
+  const navigate=useNavigate();
   return (
     <div className="w-full relative min-h-screen gap-8 flex flex-col items-center justify-center bg-[#2563EB] px-4 py-16 sm:py-20">
       {/* Heading */}
@@ -41,7 +43,7 @@ const Page8 = () => {
       </div>
 
       {/* Button */}
-      <button className="pop mt-6 bg-white flex items-center justify-center rounded-md px-4 py-3 text-[#007AFF] font-extrabold gap-2 shadow-md">
+      <button onClick={() => navigate("/brandform")} className="pop mt-6 bg-white flex items-center justify-center rounded-md px-4 py-3 text-[#007AFF] font-extrabold gap-2 shadow-md">
         <img src="/send.png" alt="" className="w-5 h-5" />
         Partner with us!
       </button>
