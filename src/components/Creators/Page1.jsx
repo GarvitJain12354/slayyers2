@@ -11,7 +11,7 @@ const Page1 = () => {
       >
         <div className="w-1/2 h-full flex flex-col max-md:w-full items-start px-10 justify-center gap-2 max-md:h-1/2 ">
           <h1 className="text-xl sm:text-2xl lg:text-4xl font-extralight italic">
-            Turn Your Fashion Influence into Revenue
+            Turn Your Fashion Influence into Revenue 
           </h1>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl uppercase font-extrabold mont">
             Join India's Most Creator-Friendly Fashion Platform

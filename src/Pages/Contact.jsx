@@ -7,6 +7,8 @@ import InvestorsSection from "../components/Contact/Investor";
 import FounderMessage from "../components/Contact/Founder";
 import FAQSection from "../components/Creators/Faq";
 import Footer from "../components/Page1/Footer";
+import ContactUsForm from "../components/Contact/ContactUsForm";
+import DirectContactInfo from "../components/Contact/DirectContactInfo";
 
 const Contact = () => {
   return (
@@ -16,6 +18,8 @@ const Contact = () => {
       <BrandPartners />
       <ContentCreators />
       <InvestorsSection />
+      <ContactUsForm/>
+      <DirectContactInfo/>
       <FounderMessage />
       <FAQSection />
       <Footer />

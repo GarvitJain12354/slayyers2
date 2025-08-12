@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import cret1 from "/cret1.png";
 import cret2 from "/cret2.png";
@@ -11,26 +14,38 @@ const WhyCreatorsChoose = () => {
     {
       img: cret1,
       title: "Instant Gratification for Your Audience",
+      benefit: "Benefit: Your followers get featured products delivered in 60 minutes.",
+      impact: "Impact: Higher conversion rates because your audience can get what they want immediately."
     },
     {
       img: cret2,
       title: "Highly Engaged Fashion Audience",
+      benefit: "Benefit: Reach Gen Z and Millennials actively looking for fashion inspiration.",
+      impact: "Impact: Your content reaches people ready to purchase, not just scroll."
     },
     {
       img: cret3,
       title: "Direct Brand Partnerships",
+      benefit: "Benefit: Get matched with fashion brands that align with your style.",
+      impact: "Impact: Authentic collaborations that resonate with your audience."
     },
     {
       img: cret4,
       title: "Transparent Analytics",
+      benefit: "Benefit: See exactly how your content performs and what drives sales.",
+      impact: "Impact: Optimize your strategy for maximum earnings."
     },
     {
       img: cret5,
       title: "Try-Before-Buy Advantage",
+      benefit: "Benefit: Your audience can try products before purchasing.",
+      impact: "Impact: Higher satisfaction rates and repeat customers."
     },
     {
       img: cret6,
       title: "Local Brand Discovery",
+      benefit: "Benefit: Showcase unique local and regional fashion brands.",
+      impact: "Impact: Stand out with exclusive, hard-to-find fashion pieces."
     },
   ];
 
@@ -47,13 +62,15 @@ const WhyCreatorsChoose = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {features.map((feature, idx) => (
-          <div key={idx} className="flex flex-col items-center space-y-3">
+          <div key={idx} className="flex flex-col items-center space-y-3 text-center">
             <img
               src={feature.img}
               alt={`feature-${idx}`}
-              className="w-32 object-contain h-32w-32 "
+              className="w-32 h-32 object-contain"
             />
             <p className="text-md lg:text-lg font-extrabold">{feature.title}</p>
+            <p className="text-sm text-gray-600">{feature.benefit}</p>
+            <p className="text-sm text-gray-500">{feature.impact}</p>
           </div>
         ))}
       </div>

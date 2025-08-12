@@ -1,32 +1,39 @@
+
+
 import React from "react";
-import partnersImage from "/contact2.png"; // image: contact2
+import partnersImage from "/contact2.png"; // Make sure this path is correct
 
 const BrandPartners = () => {
   return (
-    <div className="w-full h-screen flex items-center px-[10vh] pop">
-      <section className="bg-[#37474F66] text-white p-6 rounded-3xl mb-6 shadow-md flex flex-col items-center justify-center">
-        <h3 className="text-4xl font-bold uppercase text-center border-b w-fit mb-4">
+    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-10 py-10 pop">
+      <section className="bg-[#37474F66] text-white p-6 sm:p-10 rounded-3xl shadow-md w-full max-w-5xl">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-center border-b pb-2 mb-6">
           Brand Partners & Retailers
         </h3>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Image */}
           <img
             src={partnersImage}
             alt="Brand Partners"
-            className="w-56 md:w-72"
+            className="w-40 sm:w-56 md:w-72 object-contain"
           />
-          <div className="md:w-2/3">
-            <h4 className="text-lg font-semibold mb-2">
+
+          {/* Text */}
+          <div className="w-full md:w-2/3 space-y-4">
+            <h4 className="text-base sm:text-lg font-semibold">
               D2C Brands, Home Grown Labels & Fashion Retailers
             </h4>
-            <p className="text-sm mb-4">
+            <p className="text-sm sm:text-base">
               Ready to revolutionize how you reach customers? Let’s discuss how
-              Slayyers can amplify your brand’s presence in the Gen Z &
-              Millennial market.
+              Slayyers can amplify your brand’s presence in the Gen Z & Millennial market.
             </p>
-            <div className="flex gap-8">
+
+            <div className="flex flex-col sm:flex-row gap-6">
+              {/* Column 1 */}
               <div>
                 <p className="font-semibold">Partnership Opportunities:</p>
-                <ul className="list-disc ml-6 text-sm">
+                <ul className="list-disc ml-5 text-sm mt-1">
                   <li>D2C Home Grown Brands</li>
                   <li>Local Fashion Retailers</li>
                   <li>MBO/EBO Stores</li>
@@ -34,9 +41,11 @@ const BrandPartners = () => {
                   <li>Emerging Designers</li>
                 </ul>
               </div>
+
+              {/* Column 2 */}
               <div>
                 <p className="font-semibold">What We Discuss:</p>
-                <ul className="list-disc ml-6 text-sm">
+                <ul className="list-disc ml-5 text-sm mt-1">
                   <li>Partnership Terms and Benefits</li>
                   <li>Revenue Sharing Models</li>
                   <li>Marketing Collaboration</li>
@@ -45,7 +54,8 @@ const BrandPartners = () => {
                 </ul>
               </div>
             </div>
-            <button className="mt-4 bg-white text-[#007AFF] px-4 py-2 rounded-md font-semibold">
+
+            <button className="mt-4 bg-white text-[#007AFF] px-5 py-2 rounded-md font-semibold w-fit">
               Partner With Us
             </button>
           </div>
