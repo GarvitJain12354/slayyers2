@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar";
+import SwiperPage1 from "./SwiperPage1";
 
 const Page1 = () => {
   return (
@@ -53,11 +54,13 @@ const Page1 = () => {
             className="absolute w-4/5 sm:w-3/4 md:w-2/3 lg:w-auto max-w-[600px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             alt="Background Color"
           />
-          <img
+          <SwiperPage1 />
+
+          {/* <img
             src="/page1bg.png"
             className="absolute w-4/5 sm:w-3/4 md:w-2/3 lg:w-auto max-w-[600px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             alt="Page Background"
-          />
+          /> */}
         </div>
 
         {/* Background Circle */}
