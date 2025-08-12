@@ -1,9 +1,3 @@
-
-import React, { useState } from "react";
-// import React from "react";
-// import Navbar from "../Navbar";
-// import SwiperPage1 from "./SwiperPage1";
-
 import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { motion, AnimatePresence } from "framer-motion";

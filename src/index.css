@@ -42,13 +42,14 @@ body {
   display: flex;
 }
 .gradient-border2 {
-  background: linear-gradient(to top, #2d2282, #8c45ff);
+  /* border: 0.5px; */
+  background: linear-gradient(98.24deg, #6DDCFF 0%, #7F60F9 100%);
   padding: 3px;
   border-radius: 100px;
   display: flex;
 }
 .btn-gradient {
-  background: linear-gradient(-235deg, #671ae4, #b75cff);
+  background: linear-gradient(90deg, #E94CFE 0%, #D6BFE7 46.15%, #1F08A6 100%);
   color: white;
 }
 /* .inner-box {
