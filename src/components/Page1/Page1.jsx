@@ -1,4 +1,10 @@
+
 import React, { useState } from "react";
+// import React from "react";
+// import Navbar from "../Navbar";
+// import SwiperPage1 from "./SwiperPage1";
+
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -20,10 +26,16 @@ const Page1 = () => {
     { scale: 0.9, zIndex: 20, x: "-20%", y: "-50%", rotateY: 15 }, // right
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []); // no dependency to avoid restarting
+
   const handleClick = (index) => {
     setActiveIndex(index);
   };
-
   return (
     <>
       <Navbar />
