@@ -67,6 +67,7 @@
 import React from "react";
 import Navbar from "../Navbar";
 import { useNavigate } from "react-router-dom";
+import BackgroundOvals from "../ui/Backgroundovals";
 
 const ContactUs = () => {
   const navigate = useNavigate();
@@ -75,11 +76,12 @@ const ContactUs = () => {
       <Navbar />
       <div className="w-full min-h-screen flex flex-col relative overflow-hidden bg-[#0A0A0A]">
         {/* Background Elements */}
-        <img 
+      <BackgroundOvals />
+        {/* <img 
           src="/bgCircle.png" 
           className="absolute top-0 left-0 w-40 sm:w-52 md:w-64 lg:w-80 opacity-70" 
           alt="Background circle" 
-        />
+        /> */}
         
         {/* Main Content Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex flex-col lg:flex-row items-center justify-center relative z-10">

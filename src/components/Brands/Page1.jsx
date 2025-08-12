@@ -2,12 +2,14 @@
 
 import React from "react";
 import Navbar from "../Navbar";
+import BackgroundOvals from "../ui/Backgroundovals";
 
 const Page1 = () => {
   return (
     <>
       <Navbar />
       <div className="w-full min-h-screen flex max-md:flex-col relative overflow-hidden max-md:mt-[10vh]">
+        <BackgroundOvals />
         {/* Left Text Section */}
         <div className="w-full md:w-1/2 flex flex-col items-start justify-center px-6 sm:px-10 py-10 gap-4">
           <h1 className="text-3xl sm:text-5xl lg:text-7xl uppercase font-extrabold pop w-full leading-tight">

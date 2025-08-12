@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar";
+import BackgroundOvals from "../ui/Backgroundovals";
 
 const Page1 = () => {
   return (
@@ -9,6 +10,7 @@ const Page1 = () => {
         className="w-full h-screen flex relative overflow-hidden max-md:flex-col  max-md:mt-[10vh]
     "
       >
+        <BackgroundOvals />
         <div className="w-1/2 h-full flex flex-col max-md:w-full items-start px-10 justify-center gap-2 max-md:h-1/2 ">
           <h1 className="text-xl sm:text-2xl lg:text-4xl font-extralight italic">
             Turn Your Fashion Influence into Revenue 
@@ -38,7 +40,7 @@ const Page1 = () => {
           content creator, Slayyers offers the perfect platform to monetize your
           influence while helping your audience discover amazing fashion finds.
         </h3>
-        <img src="/bgCircle.png" className="absolute top-0 left-0" alt="" />
+        {/* <img src="/bgCircle.png" className="absolute top-0 left-0" alt="" /> */}
       </div>
     </>
   );

@@ -39,7 +39,7 @@ import BrandForm from "./components/Brands/BrandForm.jsx";
 const App = () => {
   return (
     <>
-      <div className="w-full relative overflow-hidden">
+      <div className="w-full z-10 relative overflow-hidden">
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/creator" element={<Creators />} />
