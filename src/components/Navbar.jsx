@@ -1,37 +1,31 @@
-
-
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     console.log("clicked");
   };
 
-    const handleClick = () => {
-    navigate("/"); 
+  const handleClick = () => {
+    navigate("/");
     console.log("clicked");
   };
 
-
-
   return (
-    <div className="w-full flex items-center justify-between absolute top-0 left-0 px-4 md:px-10 py-4">
+    <div className="w-full flex items-center justify-between absolute top-0 left-0 px-4 md:px-10 mb-0 pb-0">
       {/* <img  src="/logo.png" className="object-contain h-10 md:h-auto" alt="" /> */}
       <img
-      src="/logo.png"
-      alt="Logo"
-      className="object-contain h-10 md:h-auto z-10 cursor-pointer"
-      onClick={handleClick}
-    />
-      
-     
-      <div className="hidden md:block gradient-border">
+        src="/logo.png"
+        alt="Logo"
+        className="object-contain h-10 md:h-auto z-10 py-4 cursor-pointer"
+        onClick={handleClick}
+      />
+
+      {/* <div className="hidden md:block gradient-border">
         <div className="inner-box hidden md:flex   p-4  items-center justify-center gap-4 bg-black rounded-2xl z-50">
           <NavLink
             to="/creator"
@@ -52,14 +46,149 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
+      </div> */}
+
+      <div className="hidden md:flex w-[454px] h-[116px] relative z-50 ">
+        {/* SVG border  */}
+        <svg
+          className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+          viewBox="0 0 454 116"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="topbarGrad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="9.09%" stopColor="rgba(140,69,255,0)" />
+              <stop offset="100%" stopColor="#2D2282" />
+            </linearGradient>
+
+            <filter
+              id="glowFilter"
+              x="-50%"
+              y="-50%"
+              width="200%"
+              height="200%"
+            >
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="4"
+                result="blurred"
+              />
+              <feComposite
+                in="blurred"
+                in2="SourceGraphic"
+                operator="in"
+                result="blurredMask"
+              />
+              <feMerge>
+                <feMergeNode in="blurredMask" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <filter
+              id="dropShadow"
+              x="-50%"
+              y="-20%"
+              width="200%"
+              height="200%"
+            >
+              <feDropShadow
+                dx="0"
+                dy="4"
+                stdDeviation="6"
+                floodColor="#2D2282"
+                floodOpacity="0.12"
+              />
+            </filter>
+          </defs>
+
+          <path
+            d="M1.5 1.5 H452.5 V66 A48.5 48.5 0 0 1 404 114.5 H50 A48.5 48.5 0 0 1 1.5 66 Z"
+            stroke="url(#topbarGrad)"
+            strokeWidth="8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            opacity="0.18"
+            filter="url(#glowFilter)"
+          />
+          <path
+            d="M1.5 1.5 H452.5 V66 A48.5 48.5 0 0 1 404 114.5 H50 A48.5 48.5 0 0 1 1.5 66 Z"
+            stroke="rgba(45,34,130,0.07)"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            filter="url(#dropShadow)"
+          />
+
+          <path
+            d="M1.5 1.5 H452.5 V66 A48.5 48.5 0 0 1 404 114.5 H50 A48.5 48.5 0 0 1 1.5 66 Z"
+            stroke="url(#topbarGrad)"
+            strokeWidth="4"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+
+        <div
+          className="absolute inset-0 flex items-center justify-center pt-2 gap-12 rounded-b-[47px] z-10"
+          style={{
+            background: "rgba(255,255,255,0.06)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            boxShadow: "0px 4px 4px rgba(0,0,0,0.25)",
+          }}
+        >
+          <NavLink
+            to="/creator"
+            className={({ isActive }) =>
+              `text-[16px] font-medium leading-6 transition-colors duration-300 ease-out
+         ${
+           isActive
+             ? "text-white opacity-100"
+             : "text-white opacity-50 hover:opacity-100"
+         }`
+            }
+          >
+            For Creator
+          </NavLink>
+
+          <NavLink
+            to="/brands"
+            className={({ isActive }) =>
+              `text-[16px] font-medium leading-6 transition-colors duration-300 ease-out
+         ${
+           isActive
+             ? "text-white opacity-100"
+             : "text-white opacity-50 hover:opacity-100"
+         }`
+            }
+          >
+            For Brands
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `text-[16px] font-medium leading-6 transition-colors duration-300 ease-out
+         ${
+           isActive
+             ? "text-white opacity-100"
+             : "text-white opacity-50 hover:opacity-100"
+         }`
+            }
+          >
+            Contact Us
+          </NavLink>
+        </div>
       </div>
 
       {/* Mobile Hamburger Icon - hidden on desktop */}
       <div className="md:hidden z-50">
-        <button 
-          onClick={toggleMenu}
-          className="text-white focus:outline-none"
-        >
+        <button onClick={toggleMenu} className="text-white focus:outline-none">
           <svg
             className="w-6 h-6"
             fill="none"
@@ -83,7 +212,7 @@ const Navbar = () => {
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden transition-transform duration-300 ease-in-out z-40`}
       >
-        <div className="flex flex-col items-start justify-start pt-10 h-full pl-10 space-y-8">
+        <div className="flex flex-col items-start justify-start pt-10 h-full pl-10 space-y-10">
           <NavLink
             to="/creator"
             className="text-white text-xl opacity-45 hover:opacity-100 transition-opacity"
@@ -109,7 +238,7 @@ const Navbar = () => {
       </div>
 
       {/* Empty div for layout balance */}
-      <div className="hidden md:block"></div>
+      <div className="hidden md:block md:mr-32"></div>
     </div>
   );
 };
