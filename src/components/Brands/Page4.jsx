@@ -36,13 +36,17 @@ const Page4 = () => {
   ];
   return (
     <>
-      <div className="w-full px-10 ">
-        <div className="w-full min-h-screen rounded-xl flex items-center justify-center flex-col bg-white">
-          <img
-            src="/why.png"
-            className="bg-black px-4 py-2 rounded-3xl rounded-t-none max-md:rounded-none"
-            alt=""
-          />
+      <div className="w-full px-10 mt-8 md:mt-20">
+        <div className="w-full min-h-screen rounded-xl flex items-center justify-center flex-col bg-[#efefef]">
+          <div className="bg-black rounded-b-3xl px-4 py-2 pb-4 mb-4">
+            <h1
+              className="font-[mon] font-extrabold text-3xl sm:text-4xl lg:text-[50px] text-center leading-[54px] tracking-[0.35px] align-middle
+                 bg-[linear-gradient(90deg,_#00FFE1_0%,_#CCF5FF_46.15%,_#4C85FF_100%)] bg-clip-text text-transparent"
+            >
+              Why Fashion Brands Choose Slayyers
+            </h1>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl px-4">
             {data?.map((i) => (
               <WhyCard data={i} />

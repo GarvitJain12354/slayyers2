@@ -28,8 +28,14 @@ const Page5 = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col min-h-screen items-center justify-center max-md:pb-10">
-      <img src="/Streamlined.png" className="object-contain mt-20 max-md:w-[80%]" alt="" />
+    <div className="w-full flex flex-col min-h-screen items-center justify-center max-md:pb-10 mb-10">
+      <h1
+        className="mt-14 font-[mon] font-extrabold text-[50px] leading-[48px] tracking-[0.35px] text-center align-middle uppercase text-2xl sm:text-3xl lg:text-[50px] bg-gradient-to-r from-[#00eeff] via-[#c4c5e5] to-[#0073ff] bg-clip-text text-transparent
+"
+      >
+        Perfect for Fashion Brands Across <br className="hidden sm:block" />{" "}
+        Categories
+      </h1>
       <div className="w-full max-w-6xl flex flex-col items-center justify-center gap-10 mt-10 max-md:px-10 max-md:gap-12"  >
         {data?.map((i) => (
           <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 max-md:gap-2">
@@ -37,8 +43,8 @@ const Page5 = () => {
               {i.number}
             </h1>
             <div className="flex flex-col">
-              <h1 className="text-xl sm:text-2xl font-semibold"> {i.title}</h1>
-              <p className="text-sm sm:text-base lg:text-lg font-light mont mt-2">
+              <h1 className="text-xl sm:text-3xl font-semibold"> {i.title}</h1>
+              <p className=" font-normal leading-[48px] tracking-[0.35px] align-middle text-sm sm:text-base lg:text-3xl mont mt-2">
                 {" "}
                 {i.desc}
               </p>

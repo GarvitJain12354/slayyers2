@@ -27,6 +27,25 @@
   font-family: pop;
   src: url("/Poppins-Regular.ttf");
 }
+@font-face {
+  font-family: popb;
+  src: url("/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: popbl;
+  src: url("/Poppins-Black.ttf");
+}
+@font-face {
+  font-family: mon;
+  src: url("/Montserrat-VariableFont_wght.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: mon;
+  src: url("/Montserrat-VariableFont_wght.ttf");
+  font-weight: 600;
+}
+
 
 .pop{
    font-family: pop;
@@ -45,6 +64,12 @@ body {
 
 .extrathin {
   font-family: IBMLI;
+}
+.popbold {
+  font-family: popb;
+}
+.popblack {
+  font-family: popbl;
 }
 .semibold {
   font-family: IBMLSB;
