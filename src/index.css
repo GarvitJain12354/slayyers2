@@ -16,6 +16,10 @@
   src: url("/IBMPlexSans_Condensed-ExtraLightItalic.ttf");
 }
 @font-face {
+  font-family: IBMB;
+  src: url("/IBMPlexSans-Bold.ttf");
+}
+@font-face {
   font-family: mont;
   src: url("/Montserrat-Regular.ttf");
 }
@@ -45,6 +49,9 @@ body {
 .semibold {
   font-family: IBMLSB;
 }
+.bold {
+  font-family: IBMB;
+}
 .light {
   font-family: IBML;
 }
@@ -58,15 +65,17 @@ body {
   display: flex;
 }
 .gradient-border2 {
-  /* border: 0.5px; */
   background: linear-gradient(98.24deg, #6DDCFF 0%, #7F60F9 100%);
-  padding: 3px;
+  padding: 1px;
   border-radius: 100px;
   display: flex;
 }
 .btn-gradient {
   background: linear-gradient(90deg, #E94CFE 0%, #D6BFE7 46.15%, #1F08A6 100%);
   color: white;
+}
+.hover\:btn-gradient:hover {
+  background: linear-gradient(90deg, #E94CFE 0%, #D6BFE7 46.15%, #1F08A6 100%);
 }
 /* .inner-box {
   background-color: white;

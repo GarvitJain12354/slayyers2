@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -8,8 +8,18 @@ import ladka2 from "../../../public/ladka2.png";
 import ladka3 from "../../../public/ladka3.png";
 import { MotionConfig } from "framer-motion";
 import BackgroundOvals from "../ui/Backgroundovals";
+import { CiSearch } from "react-icons/ci";
 // import BackgroundOvals from "../ui/Backgroundovals";
 const Page1 = () => {
+  const [buttonSlid, setButtonSlid] = useState(false);
+
+  useEffect(() => {
+    // Slide after small delay on page load
+    const timer = setTimeout(() => {
+      setButtonSlid(true);
+    }, 800); // 0.5s after load
+    return () => clearTimeout(timer);
+  }, []);
   const [activeIndex, setActiveIndex] = useState(0);
   const images = [ladka1, ladka2, ladka3];
 
@@ -37,20 +47,19 @@ const Page1 = () => {
         <BackgroundOvals />
         {/* Left Section */}
         <div className="w-full lg:w-3/5 flex flex-col items-start px-5 sm:px-8 md:pl-20 lg:pl-16 xl:pl-20 justify-center gap-2 sm:gap-3 md:gap-4 py-8 sm:py-10 md:py-12 lg:py-0">
-          <h1 className="text-3xl xs:text-3xl extrathin sm:text-6xl md:text-6xl italic leading-[60px]  md:leading-[90px] align-middle tracking-[0px]">
+          <h1 className="text-3xl xs:text-3xl extrathin sm:text-6xl md:text-7xl italic leading-[60px]  md:leading-[90px] align-middle tracking-[0px]">
             Revolutionize Your Style
           </h1>
-          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-extrabold w-full leading-tight sm:leading-tight">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl uppercase font-extrabold w-full leading-tight sm:leading-tight">
             Delivered in 60 <br className="hidden xs:block" /> Minutes
           </h1>
           <p className=" xs:text-lg md:max-w-[500px] sm:text-xl md:text-xl font-bold  text-[#A1A1AA]">
             India's Premier AI-Powered, Influencer-Driven, Video-First Fashion
             Shopping Platform
           </p>
-
-          <div className="gradient-border2 w-full max-w-md mt-4 xs:mt-5 sm:mt-6 md:mt-8">
+          <div className="gradient-border2 w-full max-w-[500px] mt-4 xs:mt-5 sm:mt-6 md:mt-8">
             <div
-              className="inner-box p-1 sm:p-2 w-full rounded-full flex items-center gap-4 bg-black transition-all duration-500 relative"
+              className="inner-box p-1 sm:p-2 w-full h-[52px] sm:h-[60px] md:h-[64px] rounded-full flex items-center gap-4 bg-black transition-all duration-500 relative"
               onFocus={(e) => {
                 const button = e.currentTarget.querySelector(".slide-btn");
                 button.classList.add("translate-x-full", "ml-28");
@@ -60,14 +69,27 @@ const Page1 = () => {
                 button.classList.remove("translate-x-full", "ml-28");
               }}
             >
-              <button className="slide-btn text-black btn-gradient  px-5 sm:px-8 md:px-10 py-2 sm:py-3 font-bold w-fit rounded-full text-sm sm:text-base md:text-lg absolute left-2 transition-all duration-500 z-10">
+              <button
+                className={`slide-btn px-5 sm:px-8 md:px-10 py-2 sm:py-3 font-bold w-fit rounded-full text-sm sm:text-base md:text-lg absolute left-2 transition-all duration-500 z-10
+        ${
+          buttonSlid
+            ? `translate-x-full ml-28 md:ml-42 bg-white text-black hover:btn-gradient hover:text-white`
+            : "btn-gradient text-black"
+        }`}
+              >
                 Join Now
               </button>
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full  bg-transparent text-white placeholder-gray-400 outline-none px-8 py-2 text-sm sm:text-base md:text-lg"
-              />
+
+              {buttonSlid && (
+                <div className="flex items-center gap-1 w-full">
+                  <CiSearch className="text-gray-500 text-lg sm:text-xl" />
+                  <input
+                    type="text"
+                    placeholder="Search your brand, style, outfit"
+                    className="w-full bg-transparent text-white placeholder-gray-500 outline-none px-8 py-2 text-sm sm:text-base md:text-md"
+                  />
+                </div>
+              )}
             </div>
           </div>
 
@@ -192,7 +214,7 @@ const Page1 = () => {
         /> */}
 
         {/* Footer Text */}
-        <h1 className="text-center text-xs xs:text-sm sm:text-base md:text-lg font-semibold text-[#A1A1AA] absolute bottom-2 xs:bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-4 w-full">
+        <h1 className="text-center text-xs xs:text-sm sm:text-base md:text-3xl md:leading-[24px] bold text-[#A1A1AA] absolute bottom-2 xs:bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-4 w-full md:mt-32">
           For Gen Z & Millennials Who Don't Just Shop — They Slay
         </h1>
       </div>
