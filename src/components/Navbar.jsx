@@ -21,7 +21,7 @@ const Navbar = () => {
       <img
         src="/logo.png"
         alt="Logo"
-        className="object-contain h-10 md:h-auto z-10 py-4 cursor-pointer"
+        className="object-contain h-14 md:h-auto z-10 py-4 cursor-pointer"
         onClick={handleClick}
       />
 

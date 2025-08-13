@@ -33,11 +33,11 @@ const Page1 = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full  min-h-screen flex flex-col lg:flex-row relative overflow-hidden pt-16 md:pt-24">
+      <div className="w-full  min-h-screen flex flex-col lg:flex-row relative overflow-hidden pt-12 md:pt-24">
         <BackgroundOvals />
         {/* Left Section */}
-        <div className="w-full lg:w-3/5 flex flex-col items-start px-5 sm:px-8 md:pl-12 lg:pl-16 xl:pl-20 justify-center gap-2 sm:gap-3 md:gap-4 py-8 sm:py-10 md:py-12 lg:py-0">
-          <h1 className="text-2xl xs:text-3xl  sm:text-3xl md:text-6xl font-extralight italic leading-[90px] align-middle tracking-[0px]">
+        <div className="w-full lg:w-3/5 flex flex-col items-start px-5 sm:px-8 md:pl-20 lg:pl-16 xl:pl-20 justify-center gap-2 sm:gap-3 md:gap-4 py-8 sm:py-10 md:py-12 lg:py-0">
+          <h1 className="text-3xl xs:text-3xl extrathin sm:text-6xl md:text-6xl italic leading-[60px]  md:leading-[90px] align-middle tracking-[0px]">
             Revolutionize Your Style
           </h1>
           <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl uppercase font-extrabold w-full leading-tight sm:leading-tight">
