@@ -772,7 +772,7 @@ const ContactForm = () => {
         transition={{ delay: 1, duration: 0.8 }}
         className="py-6 text-center text-zinc-500 text-sm"
       >
-        <p>© {new Date().getFullYear()} SLAYYER. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Binary Threads. All rights reserved.</p>
       </motion.footer>
     </div>
   );

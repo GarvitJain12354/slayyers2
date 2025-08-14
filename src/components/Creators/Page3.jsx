@@ -19,9 +19,9 @@ const Page3 = ({ data }) => {
           ))}
         </ul>
 
-        <button className="w-fit mx-auto lg:mx-0 px-6 py-3 create-btn rounded-lg font-semibold text-base sm:text-lg lg:text-xl">
+        {/* <button className="w-fit mx-auto lg:mx-0 px-6 py-3 create-btn rounded-lg font-semibold text-base sm:text-lg lg:text-xl">
           {data.btn}
-        </button>
+        </button> */}
       </div>
 
       {/* Right Image */}

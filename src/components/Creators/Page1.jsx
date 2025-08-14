@@ -34,7 +34,7 @@ const Page1 = () => {
             alt=""
           />
         </div>
-        <h3 className="absolute left-1/2 bottom-10 -translate-x-1/2 text-center max-md:relative max-md:w-[90%]">
+        <h3 className=" hidden md:block absolute left-1/2 bottom-10 -translate-x-1/2 text-center max-md:relative max-md:w-[90%]">
           Ready to transform your fashion content into a profitable business?
           Whether you're a fashion blogger, style influencer, or lifestyle
           content creator, Slayyers offers the perfect platform to monetize your

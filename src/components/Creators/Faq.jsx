@@ -135,13 +135,13 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-black text-white px-6 lg:px-20 py-16 pop">
-      <h2 className="text-4xl leading-relaxed font-extrabold text-center">
+    <div className="bg-black text-white px-6 lg:px-20 mt-5 md:mt-0 py-2 md:py-16 pop">
+      <h2 className="text-2xl md:text-4xl leading-relaxed font-extrabold text-center">
         Frequently Asked
         <br />
         Questions
       </h2>
-      <p className="text-center text-white/70 mt-2 mb-10 text-lg">
+      <p className="text-center text-white/70 mt-2 mb:4 md:mb-10 text-lg">
         Wanna Ask Something?
       </p>
 

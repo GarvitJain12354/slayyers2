@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const images = ["/hyper1.png", "/hyper2.png", "/hyper3.png", "/hyper4.png"];
 const Page6 = () => {
   return (
-    <div className="w-full gradient mont flex flex-col gap-4 items-center py-10 max-md:min-h-screen">
+    <div className="w-full gradient mont flex flex-col gap-4 items-center pt-10 pb-0 md:py-10 max-md:min-h-screen">
       <h1 className="mont text-2xl sm:text-4xl lg:text-5xl font-extrabold text-center leading-snug mb-8">
         Hyperlocal Warehousing & <br /> Efficient Logistics
       </h1>

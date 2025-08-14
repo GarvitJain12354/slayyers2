@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import {FaHome, FaPenFancy, FaPhoneAlt, FaUserCircle} from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,12 @@ const Navbar = () => {
     navigate("/");
     console.log("clicked");
   };
+  const navItems = [
+    { label: "Home", icon: <FaHome />, path: "/" },
+    { label: "Creator", icon: <FaUserCircle />, path: "/creator" },
+    { label: "Brands", icon: <FaPenFancy />, path: "/brands" },
+    { label: "Contact", icon: <FaPhoneAlt />, path: "/contact" },
+  ];
 
   return (
     <div className="w-full flex items-center justify-between absolute top-0 left-0 px-4 md:px-10 mb-0 pb-0">
@@ -163,8 +170,23 @@ const Navbar = () => {
         </div>
       </div>
 
+      <nav className="fixed bottom-0 left-0 right-0 bg-black/80 flex justify-around py-3 md:hidden rounded-t-2xl border-t-2 border-black z-50">
+        {navItems.map((item) => (
+          <NavLink
+            to={item.path}
+            key={item.label}
+            className={`flex flex-col items-center text-white text-sm ${
+              location.pathname === item.path ? "text-[#90A955]" : ""
+            }`}
+          >
+            <div className="text-xl">{item.icon}</div>
+            <span className="mt-1">{item.label}</span>
+          </NavLink>
+        ))}
+      </nav>
+
       {/* Mobile Hamburger Icon - hidden on desktop */}
-      <div className="md:hidden z-50">
+      {/* <div className="md:hidden z-50">
         <button onClick={toggleMenu} className="text-white focus:outline-none">
           <svg
             className="w-6 h-6"
@@ -181,10 +203,10 @@ const Navbar = () => {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       {/* Mobile Menu Overlay - completely hidden on desktop */}
-      <div
+      {/* <div
         className={`fixed inset-y-0 left-0 w-64 bg-gradient-to-r from-zinc-800 via-zinc-900 to-gray-800 transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden transition-transform duration-300 ease-in-out z-40`}
@@ -211,8 +233,8 @@ const Navbar = () => {
           >
             Contact Us
           </NavLink>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       {/* Empty div for layout balance */}
       <div className="hidden md:block md:mr-32"></div>

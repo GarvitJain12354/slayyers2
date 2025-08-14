@@ -2,7 +2,7 @@ import React from "react";
 
 const Page7 = () => {
   return (
-    <div className="w-full max-h-screen flex flex-col items-center mt-5 mb-10">
+    <div className="w-full max-h-screen flex flex-col items-center my-0 py-0  md:mt-5 md:mb-10">
       <h1 className="mont text-3xl mb-6 md:mb-0  md:text-5xl font-semibold text-center">
         Transforming Fashion Businesses <br /> Across India
       </h1>

@@ -12,7 +12,7 @@ import Footer from "../components/Page1/Footer";
 const Creators = () => {
   const creatorData = [
     {
-      title: "Creator Categories:",
+      title: "Creator Categories",
       categories: [
         "Fashion Influencers - Style bloggers and fashion enthusiasts Beauty",
         "Content Creators - Makeup artists and beauty reviewers Lifestyle",

@@ -23,21 +23,23 @@ const Page1 = () => {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mt-6">
             <button
-            onClick={()=> navigate("/coming-soon")} className="text-white bg-[linear-gradient(214.02deg,_#B75CFF_6.04%,_#671AE4_92.95%)] hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)] px-6 sm:px-7 py-3 text-lg font-bold rounded-[12px]">
-              Login Profile
+              onClick={() => navigate("/get-early-access")}
+              className="text-white bg-[linear-gradient(214.02deg,_#B75CFF_6.04%,_#671AE4_92.95%)] hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)] px-6 sm:px-7 py-3 text-lg font-bold rounded-[12px]"
+            >
+              Pre Register
             </button>
             <button
-            onClick={()=> navigate("/coming-soon")}
+              onClick={() => navigate("/join-as-brand")}
               className="text-white bg-white/10 px-6 sm:px-7 py-3 font-bold text-lg rounded-[12px] border hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)]
  border-white/20"
             >
-              Create
+              Contact Us
             </button>
           </div>
         </div>
 
         {/* Right Image Section */}
-        <div className="w-full md:mt-32 md:w-1/2 flex justify-center items-center px-2 md:px-0 py-10 md:py-0 gap-4 relative z-10">
+        <div className="w-full md:mt-32 md:w-1/2 flex justify-center items-center px-2 md:px-0 pt-4 md:py-0 gap-4 relative z-10">
           <CollageBrand />
           {/* Column 1 */}
           {/* <div className="flex flex-col gap-3">
@@ -93,7 +95,6 @@ const Page1 = () => {
           className="absolute left-3/4 w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2  transform -translate-x-1/2 -translate-y-1/2"
           alt="Background Color"
         />
-        
       </div>
     </>
   );
