@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import partnersImage from "/contact2.png"; // Make sure this path is correct
 import { useNavigate } from "react-router-dom";
@@ -28,7 +26,8 @@ const BrandPartners = () => {
             </h4>
             <p className="text-sm sm:text-base">
               Ready to revolutionize how you reach customers? Let’s discuss how
-              Slayyers can amplify your brand’s presence in the Gen Z & Millennial market.
+              Slayyers can amplify your brand’s presence in the Gen Z &
+              Millennial market.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6">
@@ -56,13 +55,19 @@ const BrandPartners = () => {
                 </ul>
               </div>
             </div>
-
             <button
-            onClick={() => navigate("/join-as-brand")}
-             className="mt-4 bg-white text-[#007AFF] px-5 py-2 rounded-md font-semibold w-fit">
+              onClick={() => navigate("/join-as-brand")}
+              className="mt-4 max-md:hidden bg-white text-[#007AFF] px-5 py-2 rounded-md font-semibold w-fit"
+            >
               Partner With Us
             </button>
           </div>
+          <button
+            onClick={() => navigate("/join-as-brand")}
+            className="mt-4  bg-white md:hidden text-[#007AFF] px-5 py-2 rounded-md font-semibold w-fit"
+          >
+            Partner With Us
+          </button>
         </div>
       </section>
     </div>

@@ -31,9 +31,9 @@
 
 //     // Validate required fields
 //     if (!formData.fullName || !formData.email || !formData.whatsapp) {
-//       setSubmitMessage({ 
-//         text: 'Please fill in all required fields', 
-//         isError: true 
+//       setSubmitMessage({
+//         text: 'Please fill in all required fields',
+//         isError: true
 //       });
 //       setSubmitting(false);
 //       return;
@@ -85,7 +85,7 @@
 
 //       // Handle response
 //       const result = await response.text();
-      
+
 //       try {
 //         const jsonResponse = JSON.parse(result);
 //         if (jsonResponse.result === 'success') {
@@ -146,7 +146,7 @@
 //       <main className="flex-grow flex items-center justify-center px-4 py-12">
 //         <div className="w-full max-w-6xl mx-auto">
 //           {/* Hero Section with Form */}
-//           <motion.div 
+//           <motion.div
 //             initial={{ y: 20, opacity: 0 }}
 //             animate={{ y: 0, opacity: 1 }}
 //             transition={{ duration: 0.8 }}
@@ -154,7 +154,7 @@
 //           >
 //             {/* Left Column - Text Content */}
 //             <div className="lg:w-1/2 space-y-6">
-//               <motion.h1 
+//               <motion.h1
 //                 initial={{ opacity: 0 }}
 //                 animate={{ opacity: 1 }}
 //                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -162,8 +162,8 @@
 //               >
 //                 Fashion Delivered in <span className="whitespace-nowrap">60 Minutes</span>
 //               </motion.h1>
-              
-//               <motion.p 
+
+//               <motion.p
 //                 initial={{ opacity: 0 }}
 //                 animate={{ opacity: 1 }}
 //                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -182,7 +182,7 @@
 //             </div>
 
 //             {/* Right Column - Form */}
-//             <motion.div 
+//             <motion.div
 //               initial={{ y: 30, opacity: 0 }}
 //               animate={{ y: 0, opacity: 1 }}
 //               transition={{ delay: 0.7, duration: 0.8 }}
@@ -192,7 +192,7 @@
 //                 <h2 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-violet-400">
 //                   Get Early Access – Your Style Delivered Fast
 //                 </h2>
-                
+
 //                 <form onSubmit={handleSubmit} className="space-y-4">
 //                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 //                     <div>
@@ -358,7 +358,7 @@
 //       </main>
 
 //       {/* Footer */}
-//       <motion.footer 
+//       <motion.footer
 //         initial={{ opacity: 0 }}
 //         animate={{ opacity: 1 }}
 //         transition={{ delay: 1, duration: 0.8 }}
@@ -372,62 +372,65 @@
 
 // export default ContactForm;
 
-
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Navbar from '../Navbar';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Navbar from "../Navbar";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    age: '',
-    whatsapp: '',
-    email: '',
-    city: '',
-    gender: '',
-    instagram: '',
-    shoppingFrequency: ''
+    fullName: "",
+    age: "",
+    whatsapp: "",
+    email: "",
+    city: "",
+    gender: "",
+    instagram: "",
+    shoppingFrequency: "",
   });
 
   const [submitting, setSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState({ text: '', isError: false });
+  const [submitMessage, setSubmitMessage] = useState({
+    text: "",
+    isError: false,
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    setSubmitMessage({ text: '', isError: false });
+    setSubmitMessage({ text: "", isError: false });
 
     // Validate required fields
     if (!formData.fullName || !formData.email || !formData.whatsapp) {
-      setSubmitMessage({ 
-        text: 'Please fill in all required fields', 
-        isError: true 
+      setSubmitMessage({
+        text: "Please fill in all required fields",
+        isError: true,
       });
       setSubmitting(false);
       return;
     }
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-jEoxv1tnJfR2L19d0Ow7t88PjTcCGGnSzSrVTNSj035x2mxcC-rcn3fcFILLrHwYOg/exec';
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbzArfdVspN1DqVx5sMXIpbB-_pW6ySL-KOfmR2hg5eEFNL0CnW28bHfIti0zH7mLH7q/exec";
 
     try {
       const formPayload = {
-        'Timestamp': new Date().toISOString(),
-        'Full Name': formData.fullName,
-        'Age': formData.age,
-        'WhatsApp Number': formData.whatsapp,
-        'Email': formData.email,
-        'City': formData.city,
-        'Gender': formData.gender,
-        'Instagram Handle': formData.instagram,
-        'Shopping Frequency': formData.shoppingFrequency
+        Timestamp: new Date().toISOString(),
+        "Full Name": formData.fullName,
+        Age: formData.age,
+        "WhatsApp Number": formData.whatsapp,
+        Email: formData.email,
+        City: formData.city,
+        Gender: formData.gender,
+        "Instagram Handle": formData.instagram,
+        "Shopping Frequency": formData.shoppingFrequency,
       };
 
       // Solution 1: Direct fetch with redirect handling
@@ -437,111 +440,113 @@ const ContactForm = () => {
       });
 
       const response = await fetch(scriptURL, {
-        method: 'POST',
+        method: "POST",
         body: formDataToSend,
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        redirect: 'follow'
+        redirect: "follow",
       });
 
       // Solution 2: Alternative JSONP approach if direct fetch fails
       if (!response.ok) {
         return new Promise((resolve, reject) => {
-          const script = document.createElement('script');
+          const script = document.createElement("script");
           const callbackName = `jsonp_${Date.now()}`;
           const params = new URLSearchParams({
             ...formPayload,
-            callback: callbackName
+            callback: callbackName,
           });
           script.src = `${scriptURL}?${params.toString()}`;
-          
+
           window[callbackName] = (response) => {
             delete window[callbackName];
             document.body.removeChild(script);
-            if (response.result === 'success') {
+            if (response.result === "success") {
               setSubmitMessage({
-                text: 'Thank you! Your submission was successful.',
-                isError: false
+                text: "Thank you! Your submission was successful.",
+                isError: false,
               });
               // Reset form
               setFormData({
-                fullName: '',
-                age: '',
-                whatsapp: '',
-                email: '',
-                city: '',
-                gender: '',
-                instagram: '',
-                shoppingFrequency: ''
+                fullName: "",
+                age: "",
+                whatsapp: "",
+                email: "",
+                city: "",
+                gender: "",
+                instagram: "",
+                shoppingFrequency: "",
               });
               resolve();
             } else {
-              reject(new Error(response.error || 'Submission failed'));
+              reject(new Error(response.error || "Submission failed"));
             }
           };
-          
+
           script.onerror = () => {
             delete window[callbackName];
             document.body.removeChild(script);
-            reject(new Error('Failed to submit form'));
+            reject(new Error("Failed to submit form"));
           };
-          
+
           document.body.appendChild(script);
         });
       }
 
       // Handle direct fetch response
       const result = await response.text();
-      
+
       try {
         const jsonResponse = JSON.parse(result);
-        if (jsonResponse.result === 'success') {
+        if (jsonResponse.result === "success") {
           setSubmitMessage({
-            text: 'Thank you! Your submission was successful.',
-            isError: false
+            text: "Thank you! Your submission was successful.",
+            isError: false,
           });
           // Reset form
           setFormData({
-            fullName: '',
-            age: '',
-            whatsapp: '',
-            email: '',
-            city: '',
-            gender: '',
-            instagram: '',
-            shoppingFrequency: ''
+            fullName: "",
+            age: "",
+            whatsapp: "",
+            email: "",
+            city: "",
+            gender: "",
+            instagram: "",
+            shoppingFrequency: "",
           });
         } else {
-          throw new Error(jsonResponse.error || 'Submission failed');
+          throw new Error(jsonResponse.error || "Submission failed");
         }
       } catch (e) {
         // If JSON parse fails but submission worked (common with Google Apps Script)
-        if (response.url.includes('https://script.google.com')) {
+        if (response.url.includes("https://script.google.com")) {
           setSubmitMessage({
-            text: 'Submission successful!',
-            isError: false
+            text: "Submission successful!",
+            isError: false,
           });
           // Reset form
           setFormData({
-            fullName: '',
-            age: '',
-            whatsapp: '',
-            email: '',
-            city: '',
-            gender: '',
-            instagram: '',
-            shoppingFrequency: ''
+            fullName: "",
+            age: "",
+            whatsapp: "",
+            email: "",
+            city: "",
+            gender: "",
+            instagram: "",
+            shoppingFrequency: "",
           });
         } else {
-          throw new Error('Unexpected response from server');
+          throw new Error("Unexpected response from server");
         }
       }
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error("Submission error:", error);
       setSubmitMessage({
-        text: `Error: ${error.message || 'Failed to submit form. Please try again later.'}`,
-        isError: true
+        text: `Error: ${
+          error.message || "Failed to submit form. Please try again later."
+        }`,
+        isError: true,
       });
     } finally {
       setSubmitting(false);
@@ -552,11 +557,11 @@ const ContactForm = () => {
   return (
     <div className="min-h-screen  pop bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans flex flex-col">
       {/* Main Content */}
-      <Navbar/>
+      <Navbar />
       <main className="flex-grow flex items-center justify-center px-4 pt-18 md:pt-38 pb-12">
         <div className="w-full max-w-6xl mx-auto">
           {/* Hero Section with Form */}
-          <motion.div 
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -564,35 +569,41 @@ const ContactForm = () => {
           >
             {/* Left Column - Text Content */}
             <div className="lg:w-1/2 space-y-6">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
               >
-                Fashion Delivered in <span className="whitespace-nowrap">60 Minutes</span>
+                Fashion Delivered in{" "}
+                <span className="whitespace-nowrap">60 Minutes</span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="text-lg md:text-xl text-zinc-300"
               >
-                Be the first to experience instant fashion delivery. Sign up now for exclusive early access.
+                Be the first to experience instant fashion delivery. Sign up now
+                for exclusive early access.
               </motion.p>
 
               {submitMessage.text && (
-                <div className={`p-3 rounded-lg text-center ${
-                  submitMessage.isError ? 'bg-red-900 text-red-100' : 'bg-green-900 text-green-100'
-                }`}>
+                <div
+                  className={`p-3 rounded-lg text-center ${
+                    submitMessage.isError
+                      ? "bg-red-900 text-red-100"
+                      : "bg-green-900 text-green-100"
+                  }`}
+                >
                   {submitMessage.text}
                 </div>
               )}
             </div>
 
             {/* Right Column - Form */}
-            <motion.div 
+            <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
@@ -602,11 +613,14 @@ const ContactForm = () => {
                 <h2 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-violet-400">
                   Get Early Access – Your Style Delivered Fast
                 </h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="fullName" className="block text-sm font-medium text-zinc-300 mb-1">
+                      <label
+                        htmlFor="fullName"
+                        className="block text-sm font-medium text-zinc-300 mb-1"
+                      >
                         Full Name
                       </label>
                       <input
@@ -622,7 +636,10 @@ const ContactForm = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="age" className="block text-sm font-medium text-zinc-300 mb-1">
+                      <label
+                        htmlFor="age"
+                        className="block text-sm font-medium text-zinc-300 mb-1"
+                      >
                         Age
                       </label>
                       <input
@@ -639,7 +656,10 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="whatsapp" className="block text-sm font-medium text-zinc-300 mb-1">
+                    <label
+                      htmlFor="whatsapp"
+                      className="block text-sm font-medium text-zinc-300 mb-1"
+                    >
                       WhatsApp Number
                     </label>
                     <input
@@ -655,7 +675,10 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-zinc-300 mb-1"
+                    >
                       Email Address
                     </label>
                     <input
@@ -672,7 +695,10 @@ const ContactForm = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="city" className="block text-sm font-medium text-zinc-300 mb-1">
+                      <label
+                        htmlFor="city"
+                        className="block text-sm font-medium text-zinc-300 mb-1"
+                      >
                         City / Area
                       </label>
                       <input
@@ -688,7 +714,10 @@ const ContactForm = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="gender" className="block text-sm font-medium text-zinc-300 mb-1">
+                      <label
+                        htmlFor="gender"
+                        className="block text-sm font-medium text-zinc-300 mb-1"
+                      >
                         Gender Identity
                       </label>
                       <select
@@ -703,13 +732,18 @@ const ContactForm = () => {
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Non-binary">Non-binary</option>
-                        <option value="Prefer not to say">Prefer not to say</option>
+                        <option value="Prefer not to say">
+                          Prefer not to say
+                        </option>
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="instagram" className="block text-sm font-medium text-zinc-300 mb-1">
+                    <label
+                      htmlFor="instagram"
+                      className="block text-sm font-medium text-zinc-300 mb-1"
+                    >
                       Instagram Handle (optional)
                     </label>
                     <input
@@ -724,7 +758,10 @@ const ContactForm = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="shoppingFrequency" className="block text-sm font-medium text-zinc-300 mb-1">
+                    <label
+                      htmlFor="shoppingFrequency"
+                      className="block text-sm font-medium text-zinc-300 mb-1"
+                    >
                       How often do you shop for fashion online?
                     </label>
                     <select
@@ -752,13 +789,31 @@ const ContactForm = () => {
                   >
                     {submitting ? (
                       <>
-                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        <svg
+                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
                         </svg>
                         Submitting...
                       </>
-                    ) : 'Unlock Early Access'}
+                    ) : (
+                      "Unlock Early Access"
+                    )}
                   </motion.button>
                 </form>
               </div>
@@ -768,7 +823,7 @@ const ContactForm = () => {
       </main>
 
       {/* Footer */}
-      <motion.footer 
+      <motion.footer
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}

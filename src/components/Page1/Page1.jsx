@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -39,15 +39,34 @@ const Page1 = () => {
       setActiveIndex((prev) => (prev + 1) % images.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []); 
+  }, []);
 
+  // const handleJoinClick = () => {
+  //   if (buttonSlid && inputValue) {
+  //     console.log("Input collected:", inputValue);
+  //   }
+
+  //   setButtonSlid(!buttonSlid);
+  //   if (buttonSlid) setInputValue("");
+  // };
   const handleJoinClick = () => {
     if (buttonSlid && inputValue) {
-      console.log("Input collected:", inputValue); 
+      fetch(
+        "https://script.google.com/macros/s/AKfycbw9keO9zOYfGAMFbhiXuz1Sp7uS3LHYqGP3a9MiAm8zHEoSXG-v8lvHw6sePMZQhFGFbg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify({ email: inputValue }),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Saved to Google Sheets:", data);
+          setInputValue("");
+          alert("Email saved!");
+        })
+        .catch((err) => console.error("Error:", err));
     }
-
-    setButtonSlid(!buttonSlid); 
-    if (buttonSlid) setInputValue(""); 
+    setButtonSlid(!buttonSlid);
   };
 
   const handleClick = (index) => {
@@ -96,7 +115,7 @@ const Page1 = () => {
 
               {buttonSlid && (
                 <div className="flex items-center gap-1 w-full">
-                  <FaEnvelope  className="text-gray-500 text-lg sm:text-xl" />
+                  <FaEnvelope className="text-gray-500 text-lg sm:text-xl" />
                   <input
                     type="text"
                     placeholder="Enter your email"
