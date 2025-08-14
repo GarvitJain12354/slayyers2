@@ -36,6 +36,10 @@
   src: url("/Poppins-Black.ttf");
 }
 @font-face {
+  font-family: popsb;
+  src: url("/Poppins-SemiBold.ttf");
+}
+@font-face {
   font-family: mon;
   src: url("/Montserrat-VariableFont_wght.ttf");
   font-weight: 800;
@@ -70,6 +74,9 @@ body {
 }
 .popblack {
   font-family: popbl;
+}
+.pops {
+  font-family: popsb;
 }
 .semibold {
   font-family: IBMLSB;

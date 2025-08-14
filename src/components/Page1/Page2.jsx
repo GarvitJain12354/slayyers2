@@ -18,12 +18,12 @@ const Page2 = () => {
       {/* Content */}
       <div className="w-full absolute top-0 flex flex-col items-center justify-center pt-6 sm:pt-10 px-4 sm:px-6">
         {/* Main Heading */}
-        <h1 className="pop font-extrabold uppercase text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl leading-tight text-center">
+        <h1 className="popbold font-extrabold  tracking-[0px] text-center align-bottom uppercase  text-xl sm:text-2xl md:text-4xl lg:text-7xl xl:text-[90px]">
           Instagram is the mall.
         </h1>
 
         {/* Subheading */}
-        <h2 className="pop font-medium mt-3 text-xs sm:text-sm md:text-base lg:text-lg max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl text-center">
+        <h2 className="pops font-semibold lg:text-[27px] leading-[26px] tracking-[0px] align-bottom text-xs sm:text-sm md:text-base text-center">
           Reels are the new mannequins. And Gen Z? They're 
 not shopping — they're slaying. 
         </h2>
@@ -34,7 +34,7 @@ not shopping — they're slaying.
         </div>
 
         {/* Bottom Statement */}
-        <h1 className="pop font-extrabold uppercase text-sm sm:text-base md:text-lg lg:text-2xl w-[90%] sm:w-[80%] md:w-[60%] text-center mt-8 sm:mt-10">
+        <h1 className="popbold font-extrabold lg:text-[30px] leading-[31px] tracking-[-0.41px] align-middle uppercase text-sm sm:text-base md:text-lg md:px-32 text-center mt-8 sm:mt-10">
          Yet traditional e-commerce is still stuck in static grids and 3–5 day deliveries. There's a massive 
 gap.  <br /> Slayyers is the bridge.
         </h1>
