@@ -157,7 +157,7 @@ const Page3 = () => {
   return (
     <div className="w-full max-h-screen md:min-h-screen flex flex-col items-center justify-center gap-20 relative overflow-hidden px-4">
       {/* Button */}
-      <button onClick={() => navigate("/coming-soon")} className="pop relative z-20 bg-white hover:bg-[linear-gradient(90deg,_#FA00A6_0%,_#1715BE_100%)] flex items-center justify-center rounded-md px-4 py-2 text-[#007AFF] hover:text-white font-extrabold gap-2 text-sm sm:text-base">
+      <button onClick={() => navigate("/get-early-access")} className="pop relative z-20 bg-white hover:bg-[linear-gradient(90deg,_#FA00A6_0%,_#1715BE_100%)] flex items-center justify-center rounded-md px-4 py-2 text-[#007AFF] hover:text-white font-extrabold gap-2 text-sm sm:text-base">
         <img src="/send.png" alt="" className="w-4 sm:w-5" />
         Get Early Access
       </button>

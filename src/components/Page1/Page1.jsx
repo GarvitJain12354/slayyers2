@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -6,14 +6,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import ladka1 from "../../../public/ladka1.png";
 import ladka2 from "../../../public/ladka2.png";
 import ladka3 from "../../../public/ladka3.png";
-import { MotionConfig } from "framer-motion";
+// import { MotionConfig } from "framer-motion";
 import BackgroundOvals from "../ui/Backgroundovals";
-import { CiSearch } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa";
 // import BackgroundOvals from "../ui/Backgroundovals";
 const Page1 = () => {
   const [buttonSlid, setButtonSlid] = useState(false);
-  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
+
+  // const navigate = useNavigate();
 
   useEffect(() => {
     // Slide after small delay on page load
@@ -37,7 +39,16 @@ const Page1 = () => {
       setActiveIndex((prev) => (prev + 1) % images.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []); // no dependency to avoid restarting
+  }, []); 
+
+  const handleJoinClick = () => {
+    if (buttonSlid && inputValue) {
+      console.log("Input collected:", inputValue); 
+    }
+
+    setButtonSlid(!buttonSlid); 
+    if (buttonSlid) setInputValue(""); 
+  };
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -72,7 +83,7 @@ const Page1 = () => {
               }}
             >
               <button
-              onClick={()=> navigate("/coming-soon")}
+                onClick={handleJoinClick}
                 className={`slide-btn px-5 sm:px-8 md:px-10 py-2 sm:py-3 font-bold w-fit rounded-full text-sm sm:text-base md:text-lg absolute left-2 transition-all duration-500 z-10
         ${
           buttonSlid
@@ -85,11 +96,13 @@ const Page1 = () => {
 
               {buttonSlid && (
                 <div className="flex items-center gap-1 w-full">
-                  <CiSearch className="text-gray-500 text-lg sm:text-xl" />
+                  <FaEnvelope  className="text-gray-500 text-lg sm:text-xl" />
                   <input
                     type="text"
-                    placeholder="Search your brand, style, outfit"
+                    placeholder="Enter your email"
                     className="w-full bg-transparent text-white placeholder-gray-500 outline-none px-8 py-2 text-sm sm:text-base md:text-md"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                   />
                 </div>
               )}

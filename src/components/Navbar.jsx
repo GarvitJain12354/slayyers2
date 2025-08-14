@@ -127,7 +127,7 @@ const Navbar = () => {
           }}
         >
           <NavLink
-            to="/creators"
+            to="/creator"
             className={({ isActive }) =>
               `text-[16px] font-medium leading-6 transition-colors duration-300 ease-out
          ${
