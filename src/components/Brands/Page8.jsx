@@ -43,7 +43,7 @@ const Page8 = () => {
       </div>
 
       {/* Button */}
-      <button onClick={() => navigate("/brandform")} className="pop mt-6 bg-white hover:bg-[linear-gradient(90deg,_#FA00A6_0%,_#1715BE_100%)] 
+      <button onClick={() => navigate("/join-as-brand")} className="pop mt-6 bg-white hover:bg-[linear-gradient(90deg,_#FA00A6_0%,_#1715BE_100%)] 
  flex items-center justify-center rounded-md px-4 py-3 text-[#007AFF] hover:text-white font-extrabold gap-2 shadow-md">
         <img src="/send.png" alt="" className="w-5 h-5" />
         Partner with us!

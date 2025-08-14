@@ -24,25 +24,25 @@ const Footer = () => {
 
           {/* App Buttons */}
           <div className="flex gap-4 flex-wrap">
-            <a href="#">
+            <a href="/coming-soon">
               <img src="/google1.png" alt="Get it on Google Play" className="h-10 sm:h-12 object-contain" />
             </a>
-            <a href="#">
+            <a href="/coming-soon">
               <img src="/app1.png" alt="Download on the App Store" className="h-10 sm:h-12 object-contain" />
             </a>
           </div>
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-700 pt-10 text-sm">
+        <div className=" hidden md:grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-700 pt-10 text-sm">
           {/* Company */}
           <div>
             <h3 className="font-semibold mb-2">Company</h3>
             <ul className="space-y-1 text-gray-400">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Works</a></li>
-              <li><a href="#">Career</a></li>
+              <li><a href="/coming-soon">About</a></li>
+              <li><a href="/coming-soon">Features</a></li>
+              <li><a href="/coming-soon">Works</a></li>
+              <li><a href="/coming-soon">Career</a></li>
             </ul>
           </div>
 
@@ -50,10 +50,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-2">Help</h3>
             <ul className="space-y-1 text-gray-400">
-              <li><a href="#">Customer Support</a></li>
-              <li><a href="#">Delivery Details</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="/coming-soon">Customer Support</a></li>
+              <li><a href="/coming-soon">Delivery Details</a></li>
+              <li><a href="/coming-soon">Terms & Conditions</a></li>
+              <li><a href="/coming-soon">Privacy Policy</a></li>
             </ul>
           </div>
 
@@ -61,10 +61,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-2">Resources</h3>
             <ul className="space-y-1 text-gray-400">
-              <li><a href="#">Free eBooks</a></li>
-              <li><a href="#">Development Tutorial</a></li>
-              <li><a href="#">How to - Blog</a></li>
-              <li><a href="#">YouTube Playlist</a></li>
+              <li><a href="/coming-soon">Free eBooks</a></li>
+              <li><a href="/coming-soon">Development Tutorial</a></li>
+              <li><a href="/coming-soon">How to - Blog</a></li>
+              <li><a href="/coming-soon">YouTube Playlist</a></li>
             </ul>
           </div>
 
@@ -81,7 +81,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-10 border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-gray-500 text-xs gap-4">
           <p className="text-center sm:text-left">
-            © 2025 G5 Graphics & Marketing. All rights reserved.
+            © 2025 Binary Threads. All rights reserved.
           </p>
           <div className="flex gap-4 text-lg">
             <a href="#"><i className="ri-instagram-fill" /></a>

@@ -1,11 +1,14 @@
-
-
 import React from "react";
 import creatorImage from "/contact3.png";
+import { useNavigate } from "react-router-dom";
 
 const ContentCreators = () => {
+  const navigate = useNavigate();
+  const handleMail = () => {
+    window.location.href = "mailto:connect@slayyers.com";
+  };
   return (
-    <div className="w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-20 py-10 pop">
+    <div className="w-full flex items-center justify-center px-4 sm:px-6 lg:px-20 py-10 pop">
       <section className="bg-[#37474F66] text-white p-5 sm:p-8 rounded-3xl shadow-md w-full max-w-5xl">
         <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-center border-b border-white/20 pb-2 mb-6">
           Content Creators & Influencers
@@ -55,9 +58,14 @@ const ContentCreators = () => {
             </div>
 
             <div className="flex justify-center md:justify-start">
-              <button className="mt-4 bg-white text-[#007AFF] px-5 py-2 rounded-md font-semibold text-sm hover:bg-opacity-90 transition">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=connect@slayyers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 bg-white text-[#007AFF] px-5 py-2 rounded-md font-semibold text-sm hover:bg-opacity-90 transition inline-block text-center"
+              >
                 Join as Creator
-              </button>
+              </a>
             </div>
           </div>
 

@@ -25,29 +25,6 @@ const Navbar = () => {
         onClick={handleClick}
       />
 
-      {/* <div className="hidden md:block gradient-border">
-        <div className="inner-box hidden md:flex   p-4  items-center justify-center gap-4 bg-black rounded-2xl z-50">
-          <NavLink
-            to="/creator"
-            className="text-white hidden md:block  text-base opacity-45 hover:opacity-100 transition-opacity"
-          >
-            For Creator
-          </NavLink>
-          <NavLink
-            to="/brands"
-            className="text-white hidden md:block  text-base opacity-45 hover:opacity-100 transition-opacity"
-          >
-            For Brands
-          </NavLink>
-          <NavLink 
-            to="/contact" 
-            className="text-white hidden md:block  text-base opacity-45 hover:opacity-100 transition-opacity"
-          >
-            Contact Us
-          </NavLink>
-        </div>
-      </div> */}
-
       <div className="hidden md:flex w-[454px] h-[116px] relative z-50 ">
         {/* SVG border  */}
         <svg
@@ -143,7 +120,7 @@ const Navbar = () => {
           }}
         >
           <NavLink
-            to="/creator"
+            to="/creators"
             className={({ isActive }) =>
               `text-[16px] font-medium leading-6 transition-colors duration-300 ease-out
          ${

@@ -9,9 +9,11 @@ import ladka3 from "../../../public/ladka3.png";
 import { MotionConfig } from "framer-motion";
 import BackgroundOvals from "../ui/Backgroundovals";
 import { CiSearch } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 // import BackgroundOvals from "../ui/Backgroundovals";
 const Page1 = () => {
   const [buttonSlid, setButtonSlid] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Slide after small delay on page load
@@ -70,6 +72,7 @@ const Page1 = () => {
               }}
             >
               <button
+              onClick={()=> navigate("/coming-soon")}
                 className={`slide-btn px-5 sm:px-8 md:px-10 py-2 sm:py-3 font-bold w-fit rounded-full text-sm sm:text-base md:text-lg absolute left-2 transition-all duration-500 z-10
         ${
           buttonSlid

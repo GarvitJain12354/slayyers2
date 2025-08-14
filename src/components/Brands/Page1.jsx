@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../Navbar";
 import BackgroundOvals from "../ui/Backgroundovals";
 import CollageBrand from "../ui/CollageBrand";
+import { useNavigate } from "react-router-dom";
 
 const Page1 = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -20,10 +22,12 @@ const Page1 = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mt-6">
-            <button className="text-white bg-[linear-gradient(214.02deg,_#B75CFF_6.04%,_#671AE4_92.95%)] hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)] px-6 sm:px-7 py-3 text-lg font-bold rounded-[12px]">
+            <button
+            onClick={()=> navigate("/coming-soon")} className="text-white bg-[linear-gradient(214.02deg,_#B75CFF_6.04%,_#671AE4_92.95%)] hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)] px-6 sm:px-7 py-3 text-lg font-bold rounded-[12px]">
               Login Profile
             </button>
             <button
+            onClick={()=> navigate("/coming-soon")}
               className="text-white bg-white/10 px-6 sm:px-7 py-3 font-bold text-lg rounded-[12px] border hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)]
  border-white/20"
             >
