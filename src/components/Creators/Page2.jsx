@@ -9,7 +9,8 @@ const Page2 = () => {
         creator, Slayyers offers the perfect platform to monetize your influence
         while helping your audience discover amazing fashion finds.
       </h3>
-      <h1 className=" text-2xl md:text-5xl font-[mon] font-extrabold text-center w-full">
+
+      <h1 className=" text-2xl md:text-5xl font-[mon] font-extrabold text-center w-full bg-gradient-to-r from-[#9000E3] via-[#FFFFFF] to-[#009BD9] text-transparent bg-clip-text">
         Perfect for Creators in Fashion, <br /> Beauty & Lifestyle
       </h1>
     </div>

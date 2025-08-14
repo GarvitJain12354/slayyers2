@@ -92,7 +92,7 @@ const Page1 = () => {
         {/* Background */}
         <img
           src="/bgColor.png"
-          className="absolute left-3/4 w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2  transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute pointer-events-none left-3/4 w-full max-w-[500px] md:max-w-[600px] lg:max-w-[700px] top-1/2  transform -translate-x-1/2 -translate-y-1/2"
           alt="Background Color"
         />
       </div>

@@ -10,7 +10,7 @@
         pointerEvents: "none",
         overflow: "hidden",
       }}
-      className="select-none"
+      className="select-none pointer-events-none"
     >
       {/* Oval 2 */}
       <div
