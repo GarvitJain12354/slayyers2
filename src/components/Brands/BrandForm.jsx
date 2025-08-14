@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Navbar from '../Navbar';
 
 const BrandForm = () => {
   const [formData, setFormData] = useState({
@@ -153,7 +154,7 @@ const BrandForm = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans pop flex flex-col">
       <Navbar/>
-      <main className="flex-grow flex items-center justify-center pt-32 px-4 pb-12">
+      <main className="flex-grow flex items-center justify-center pt-20 md:pt-36 px-4 pb-12">
         <div className="w-full max-w-7xl mx-auto">
           <motion.div 
             initial={{ y: 20, opacity: 0 }}

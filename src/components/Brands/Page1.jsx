@@ -23,7 +23,7 @@ const Page1 = () => {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mt-6">
             <button
-              onClick={() => navigate("/get-early-access")}
+              onClick={() => navigate("/join-as-brand")}
               className="text-white bg-[linear-gradient(214.02deg,_#B75CFF_6.04%,_#671AE4_92.95%)] hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)] px-6 sm:px-7 py-3 text-lg font-bold rounded-[12px]"
             >
               Pre Register

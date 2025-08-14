@@ -553,7 +553,7 @@ const ContactForm = () => {
     <div className="min-h-screen  pop bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans flex flex-col">
       {/* Main Content */}
       <Navbar/>
-      <main className="flex-grow flex items-center justify-center px-4 pt-38 pb-12">
+      <main className="flex-grow flex items-center justify-center px-4 pt-18 md:pt-38 pb-12">
         <div className="w-full max-w-6xl mx-auto">
           {/* Hero Section with Form */}
           <motion.div 
