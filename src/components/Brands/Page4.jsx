@@ -36,11 +36,11 @@ const Page4 = () => {
   ];
   return (
     <>
-      <div className="w-full px-10 mt-8 md:mt-20">
+      <div className="w-full px-2 md:px-10 mt-8 md:mt-20">
         <div className="w-full min-h-screen rounded-xl flex items-center justify-center flex-col bg-[#efefef]">
           <div className="bg-black rounded-b-3xl px-4 py-2 pb-4 mb-4">
             <h1
-              className="font-[mon] font-extrabold text-3xl sm:text-4xl lg:text-[50px] text-center leading-[54px] tracking-[0.35px] align-middle
+              className="font-[mon] font-extrabold text-2xl sm:text-4xl lg:text-[50px] text-center md:leading-[54px] tracking-[0.35px] align-middle
                  bg-[linear-gradient(90deg,_#00FFE1_0%,_#CCF5FF_46.15%,_#4C85FF_100%)] bg-clip-text text-transparent"
             >
               Why Fashion Brands Choose Slayyers

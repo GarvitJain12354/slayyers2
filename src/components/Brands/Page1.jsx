@@ -14,7 +14,7 @@ const Page1 = () => {
           <h1 className="text-3xl sm:text-5xl lg:text-6xl popbold leading-[135%]  tracking-[0.02em] uppercase w-full ">
             PARTNER WITH <br className="hidden sm:block" /> SLAYYERS!
           </h1>
-          <p className=" pop font-medium  leading-[180%] tracking-[0] text-xl text-[#ffffff]/50 ">
+          <p className=" pop font-medium  md:leading-[180%] tracking-[0] text-xl text-[#ffffff]/50 ">
             Amplify Your Brand's Reach with India's Fastest Fashion Platform.
           </p>
 
@@ -33,7 +33,7 @@ const Page1 = () => {
         </div>
 
         {/* Right Image Section */}
-        <div className="w-full md:mt-32 md:w-1/2 flex justify-center items-center py-10 md:py-0 gap-4 relative z-10">
+        <div className="w-full md:mt-32 md:w-1/2 flex justify-center items-center px-2 md:px-0 py-10 md:py-0 gap-4 relative z-10">
           <CollageBrand />
           {/* Column 1 */}
           {/* <div className="flex flex-col gap-3">

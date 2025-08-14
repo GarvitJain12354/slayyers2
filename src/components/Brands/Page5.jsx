@@ -30,7 +30,7 @@ const Page5 = () => {
   return (
     <div className="w-full flex flex-col min-h-screen items-center justify-center max-md:pb-10 mb-10">
       <h1
-        className="mt-14 font-[mon] font-extrabold text-[50px] leading-[48px] tracking-[0.35px] text-center align-middle uppercase text-2xl sm:text-3xl lg:text-[50px] bg-gradient-to-r from-[#00eeff] via-[#c4c5e5] to-[#0073ff] bg-clip-text text-transparent
+        className="mt-14 font-[mon] font-extrabold md:leading-[48px] tracking-[0.35px] text-center align-middle uppercase text-2xl sm:text-3xl lg:text-[50px] bg-gradient-to-r from-[#00eeff] via-[#c4c5e5] to-[#0073ff] bg-clip-text text-transparent
 "
       >
         Perfect for Fashion Brands Across <br className="hidden sm:block" />{" "}
@@ -44,7 +44,7 @@ const Page5 = () => {
             </h1>
             <div className="flex flex-col">
               <h1 className="text-xl sm:text-3xl font-semibold"> {i.title}</h1>
-              <p className=" font-normal leading-[48px] tracking-[0.35px] align-middle text-sm sm:text-base lg:text-3xl mont mt-2">
+              <p className=" font-normal md:leading-[48px] tracking-[0.35px] align-middle text-sm sm:text-base lg:text-3xl mont mt-2">
                 {" "}
                 {i.desc}
               </p>

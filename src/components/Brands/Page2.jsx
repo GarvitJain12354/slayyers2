@@ -7,13 +7,13 @@ import AnimatedContentFrames from "./AnimatedContentFrames";
 
 const Page2 = () => {
   return (
-    <div className="w-full py-16 px-4 sm:px-8 lg:px-20 flex flex-col items-center gap-12 min-h-fit relative">
-      <h1 className="font-[mon] font-extrabold leading-10 tracking-[0px] text-center text-sm  md:text-3xl text-gray-400 w-full px-4 md:px-20">
+    <div className="w-full py-8 md:py-16 px-4 sm:px-8 lg:px-20 flex flex-col items-center gap-12 min-h-fit relative">
+      <h1 className="font-[mon] font-extrabold md:leading-10 tracking-[0px] text-center text-sm  md:text-3xl text-gray-400 w-full px-4 md:px-20">
         Join the revolution that's reshaping how fashion brands connect with Gen
         Z & Millennials.
       </h1>
       <h1
-        className="mt-14 popbold font-extrabold leading-[135%] tracking-[0px] text-center align-middle text-2xl sm:text-3xl lg:text-[50px] bg-gradient-to-r from-[#9000E3] via-[#ffffff] to-[#009bd9] bg-clip-text text-transparent
+        className="mt-14 popbold font-extrabold md:leading-[135%] tracking-[0px] text-center align-middle text-2xl sm:text-3xl lg:text-[50px] bg-gradient-to-r from-[#9000E3] via-[#ffffff] to-[#009bd9] bg-clip-text text-transparent
 "
       >
         Perfect for Fashion Brands Across <br className="hidden sm:block" />{" "}
