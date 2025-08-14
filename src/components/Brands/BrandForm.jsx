@@ -152,7 +152,8 @@ const BrandForm = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans pop flex flex-col">
-      <main className="flex-grow flex items-center justify-center px-4 py-12">
+      <Navbar/>
+      <main className="flex-grow flex items-center justify-center pt-32 px-4 pb-12">
         <div className="w-full max-w-7xl mx-auto">
           <motion.div 
             initial={{ y: 20, opacity: 0 }}

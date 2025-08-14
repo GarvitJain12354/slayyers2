@@ -9,7 +9,7 @@ const Page1 = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full min-h-screen flex max-md:flex-col relative overflow-hidden md:px-27 max-md:mt-[10vh]">
+      <div className="w-full min-h-screen flex max-md:flex-col relative overflow-hidden pt-12 md:px-27 md:mt-[10vh]">
         <BackgroundOvals />
         {/* Left Text Section */}
         <div className="w-full md:w-1/2 flex flex-col items-start justify-center px-6 sm:pr-10 py-10 md:mt-10 gap-4 md:pl-0 md:ml-0">
@@ -29,7 +29,7 @@ const Page1 = () => {
               Pre Register
             </button>
             <button
-              onClick={() => navigate("/join-as-brand")}
+              onClick={() => navigate("/contact")}
               className="text-white bg-white/10 px-6 sm:px-7 py-3 font-bold text-lg rounded-[12px] border hover:bg-[linear-gradient(270deg,_#0080FF_0%,_#A200FF_100%)]
  border-white/20"
             >

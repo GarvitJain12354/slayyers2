@@ -23,7 +23,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full flex items-center justify-between absolute top-0 left-0 px-4 md:px-10 mb-0 pb-0">
+    <div className="w-full flex bg-black/90 md:bg-transparent  items-center z-50 justify-between fixed md:absolute top-0 left-0 px-4 md:px-10 mb-0 pb-0">
       {/* <img  src="/logo.png" className="object-contain h-10 md:h-auto" alt="" /> */}
       <img
         src="/logo.png"

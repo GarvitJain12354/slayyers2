@@ -38,7 +38,7 @@ const CreatorSteps = () => {
 
       <div className="pt-6 w-full flex items-center justify-center">
         <button
-         onClick={navigate('/')}
+         onClick={() => navigate('/coming-soon')}
          className="pop relative z-20 bg-white flex items-center justify-center rounded-md px-4 py-2 text-[#007AFF] font-extrabold gap-2">
           <img src={sendIcon} alt="send icon" className="w-5 h-5" />
           Apply as Creator

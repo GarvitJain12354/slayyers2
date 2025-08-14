@@ -375,6 +375,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Navbar from '../Navbar';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -549,9 +550,10 @@ const ContactForm = () => {
 
   // ... rest of your component JSX remains the same ...
   return (
-    <div className="min-h-screen pop bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans flex flex-col">
+    <div className="min-h-screen  pop bg-gradient-to-br from-zinc-900 to-black text-gray-100 font-sans flex flex-col">
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center px-4 py-12">
+      <Navbar/>
+      <main className="flex-grow flex items-center justify-center px-4 pt-38 pb-12">
         <div className="w-full max-w-6xl mx-auto">
           {/* Hero Section with Form */}
           <motion.div 
