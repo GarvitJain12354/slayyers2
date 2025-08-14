@@ -67,7 +67,7 @@ const ContentThatConverts = () => {
             className="w-[250px]"
           />
           <div>
-            <h3 className="font-bold text-2xl mb-3">{section.title}</h3>
+            <h3 className=" text-center md:text-left pops font-semibold text-2xl mb-3">{section.title}</h3>
             <ul className="list-disc ml-5 space-y-2 text-xl text-white/90">
               {section.points.map((point, idx) => (
                 <li key={idx}>{point}</li>

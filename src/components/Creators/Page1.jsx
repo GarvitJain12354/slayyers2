@@ -15,10 +15,10 @@ const Page1 = () => {
           <h1 className="text-xl sm:text-2xl lg:text-4xl font-extralight italic">
             Turn Your Fashion Influence into Revenue 
           </h1>
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl uppercase font-extrabold mont">
+          <h1 className="text-2xl popbold sm:text-4xl lg:text-5xl uppercase font-extrabold">
             Join India's Most Creator-Friendly Fashion Platform
           </h1>
-          <p className="text-2xl font-extrabold mt-4 text-[#A1A1AA] mont">
+          <p className="text-2xl mt-4 pop text-[#A1A1AA]">
             Monetize Your Style Expertise with Slayyers
           </p>
         </div>

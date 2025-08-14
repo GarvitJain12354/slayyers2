@@ -20,11 +20,11 @@ const BrandPartners = () => {
           />
 
           {/* Text */}
-          <div className="w-full md:w-2/3 space-y-4">
-            <h4 className="text-base sm:text-lg font-semibold">
+          <div className="w-full flex flex-col items-center md:items-start md:w-2/3 space-y-4">
+            <h4 className="text-base sm:text-lg text-center md:text-left font-semibold">
               D2C Brands, Home Grown Labels & Fashion Retailers
             </h4>
-            <p className="text-sm sm:text-base">
+            <p className="text-sm sm:text-base text-center md:text-left">
               Ready to revolutionize how you reach customers? Let’s discuss how
               Slayyers can amplify your brand’s presence in the Gen Z &
               Millennial market.
@@ -33,8 +33,8 @@ const BrandPartners = () => {
             <div className="flex flex-col sm:flex-row gap-6">
               {/* Column 1 */}
               <div>
-                <p className="font-semibold">Partnership Opportunities:</p>
-                <ul className="list-disc ml-5 text-sm mt-1">
+                <p className="font-semibold ">Partnership Opportunities:</p>
+                <ul className="list-disc ml-5 text-sm mt-1 ">
                   <li>D2C Home Grown Brands</li>
                   <li>Local Fashion Retailers</li>
                   <li>MBO/EBO Stores</li>
@@ -45,7 +45,7 @@ const BrandPartners = () => {
 
               {/* Column 2 */}
               <div>
-                <p className="font-semibold">What We Discuss:</p>
+                <p className="font-semibold ">What We Discuss:</p>
                 <ul className="list-disc ml-5 text-sm mt-1">
                   <li>Partnership Terms and Benefits</li>
                   <li>Revenue Sharing Models</li>
