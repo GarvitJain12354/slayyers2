@@ -401,7 +401,6 @@ const ContactForm = () => {
       [name]: value,
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -418,140 +417,210 @@ const ContactForm = () => {
     }
 
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzArfdVspN1DqVx5sMXIpbB-_pW6ySL-KOfmR2hg5eEFNL0CnW28bHfIti0zH7mLH7q/exec";
+      "https://script.google.com/macros/s/AKfycbzwsvZ3Hsm5TcmFDrJxnqFDHvPcbdGlVGx9O1KqybYgELhv3P_MlRPRKINjoO4RnFVQ7A/exec";
 
     try {
-      const formPayload = {
-        Timestamp: new Date().toISOString(),
-        "Full Name": formData.fullName,
-        Age: formData.age,
-        "WhatsApp Number": formData.whatsapp,
-        Email: formData.email,
-        City: formData.city,
-        Gender: formData.gender,
-        "Instagram Handle": formData.instagram,
-        "Shopping Frequency": formData.shoppingFrequency,
+      // Create JSON payload to match your Apps Script
+      const payload = {
+        fullName: formData.fullName,
+        age: formData.age,
+        whatsappNumber: formData.whatsapp,
+        email: formData.email,
+        city: formData.city,
+        gender: formData.gender,
+        instagramHandle: formData.instagram,
+        shoppingFrequency: formData.shoppingFrequency,
       };
-
-      // Solution 1: Direct fetch with redirect handling
-      const formDataToSend = new URLSearchParams();
-      Object.entries(formPayload).forEach(([key, value]) => {
-        formDataToSend.append(key, value);
-      });
 
       const response = await fetch(scriptURL, {
         method: "POST",
-        body: formDataToSend,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow",
+
+        body: JSON.stringify(payload),
       });
 
-      // Solution 2: Alternative JSONP approach if direct fetch fails
-      if (!response.ok) {
-        return new Promise((resolve, reject) => {
-          const script = document.createElement("script");
-          const callbackName = `jsonp_${Date.now()}`;
-          const params = new URLSearchParams({
-            ...formPayload,
-            callback: callbackName,
-          });
-          script.src = `${scriptURL}?${params.toString()}`;
+      const result = await response.json(); // Read JSON response
 
-          window[callbackName] = (response) => {
-            delete window[callbackName];
-            document.body.removeChild(script);
-            if (response.result === "success") {
-              setSubmitMessage({
-                text: "Thank you! Your submission was successful.",
-                isError: false,
-              });
-              // Reset form
-              setFormData({
-                fullName: "",
-                age: "",
-                whatsapp: "",
-                email: "",
-                city: "",
-                gender: "",
-                instagram: "",
-                shoppingFrequency: "",
-              });
-              resolve();
-            } else {
-              reject(new Error(response.error || "Submission failed"));
-            }
-          };
-
-          script.onerror = () => {
-            delete window[callbackName];
-            document.body.removeChild(script);
-            reject(new Error("Failed to submit form"));
-          };
-
-          document.body.appendChild(script);
+      if (result.status === "success") {
+        setSubmitMessage({
+          text: "Thank you! Your submission was successful.",
+          isError: false,
         });
-      }
 
-      // Handle direct fetch response
-      const result = await response.text();
-
-      try {
-        const jsonResponse = JSON.parse(result);
-        if (jsonResponse.result === "success") {
-          setSubmitMessage({
-            text: "Thank you! Your submission was successful.",
-            isError: false,
-          });
-          // Reset form
-          setFormData({
-            fullName: "",
-            age: "",
-            whatsapp: "",
-            email: "",
-            city: "",
-            gender: "",
-            instagram: "",
-            shoppingFrequency: "",
-          });
-        } else {
-          throw new Error(jsonResponse.error || "Submission failed");
-        }
-      } catch (e) {
-        // If JSON parse fails but submission worked (common with Google Apps Script)
-        if (response.url.includes("https://script.google.com")) {
-          setSubmitMessage({
-            text: "Submission successful!",
-            isError: false,
-          });
-          // Reset form
-          setFormData({
-            fullName: "",
-            age: "",
-            whatsapp: "",
-            email: "",
-            city: "",
-            gender: "",
-            instagram: "",
-            shoppingFrequency: "",
-          });
-        } else {
-          throw new Error("Unexpected response from server");
-        }
+        // Reset form
+        setFormData({
+          fullName: "",
+          age: "",
+          whatsapp: "",
+          email: "",
+          city: "",
+          gender: "",
+          instagram: "",
+          shoppingFrequency: "",
+        });
+      } else {
+        throw new Error("Submission failed");
       }
     } catch (error) {
       console.error("Submission error:", error);
       setSubmitMessage({
-        text: `Error: ${
-          error.message || "Failed to submit form. Please try again later."
-        }`,
+        text: `Error: ${error.message || "Failed to submit form"}`,
         isError: true,
       });
     } finally {
       setSubmitting(false);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setSubmitting(true);
+  //   setSubmitMessage({ text: "", isError: false });
+
+  //   // Validate required fields
+  //   if (!formData.fullName || !formData.email || !formData.whatsapp) {
+  //     setSubmitMessage({
+  //       text: "Please fill in all required fields",
+  //       isError: true,
+  //     });
+  //     setSubmitting(false);
+  //     return;
+  //   }
+
+  //   const scriptURL =
+  //     "https://script.google.com/macros/s/AKfycbzjFU_OVG99runLPO8MHmSC0Gpj5fKuHcO-oOSp9__i25ENQiYF5KsuIh9XUOyO3aLGyQ/exec";
+
+  //   try {
+  //     const formPayload = {
+  //       Timestamp: new Date().toISOString(),
+  //       "Full Name": formData.fullName,
+  //       Age: formData.age,
+  //       "WhatsApp Number": formData.whatsapp,
+  //       Email: formData.email,
+  //       City: formData.city,
+  //       Gender: formData.gender,
+  //       "Instagram Handle": formData.instagram,
+  //       "Shopping Frequency": formData.shoppingFrequency,
+  //     };
+
+  //     // Solution 1: Direct fetch with redirect handling
+  //     const formDataToSend = new URLSearchParams();
+  //     Object.entries(formPayload).forEach(([key, value]) => {
+  //       formDataToSend.append(key, value);
+  //     });
+
+  //     const response = await fetch(scriptURL, {
+  //       method: "POST",
+  //       body: formDataToSend,
+  //       headers: {
+  //         "Content-Type": "application/x-www-form-urlencoded",
+  //       },
+  //       redirect: "follow",
+  //     });
+
+  //     // Solution 2: Alternative JSONP approach if direct fetch fails
+  //     if (!response.ok) {
+  //       return new Promise((resolve, reject) => {
+  //         const script = document.createElement("script");
+  //         const callbackName = `jsonp_${Date.now()}`;
+  //         const params = new URLSearchParams({
+  //           ...formPayload,
+  //           callback: callbackName,
+  //         });
+  //         script.src = `${scriptURL}?${params.toString()}`;
+
+  //         window[callbackName] = (response) => {
+  //           delete window[callbackName];
+  //           document.body.removeChild(script);
+  //           if (response.result === "success") {
+  //             setSubmitMessage({
+  //               text: "Thank you! Your submission was successful.",
+  //               isError: false,
+  //             });
+  //             // Reset form
+  //             setFormData({
+  //               fullName: "",
+  //               age: "",
+  //               whatsapp: "",
+  //               email: "",
+  //               city: "",
+  //               gender: "",
+  //               instagram: "",
+  //               shoppingFrequency: "",
+  //             });
+  //             resolve();
+  //           } else {
+  //             reject(new Error(response.error || "Submission failed"));
+  //           }
+  //         };
+
+  //         script.onerror = () => {
+  //           delete window[callbackName];
+  //           document.body.removeChild(script);
+  //           reject(new Error("Failed to submit form"));
+  //         };
+
+  //         document.body.appendChild(script);
+  //       });
+  //     }
+
+  //     // Handle direct fetch response
+  //     const result = await response.text();
+
+  //     try {
+  //       const jsonResponse = JSON.parse(result);
+  //       if (jsonResponse.result === "success") {
+  //         setSubmitMessage({
+  //           text: "Thank you! Your submission was successful.",
+  //           isError: false,
+  //         });
+  //         // Reset form
+  //         setFormData({
+  //           fullName: "",
+  //           age: "",
+  //           whatsapp: "",
+  //           email: "",
+  //           city: "",
+  //           gender: "",
+  //           instagram: "",
+  //           shoppingFrequency: "",
+  //         });
+  //       } else {
+  //         throw new Error(jsonResponse.error || "Submission failed");
+  //       }
+  //     } catch (e) {
+  //       // If JSON parse fails but submission worked (common with Google Apps Script)
+  //       if (response.url.includes("https://script.google.com")) {
+  //         setSubmitMessage({
+  //           text: "Submission successful!",
+  //           isError: false,
+  //         });
+  //         // Reset form
+  //         setFormData({
+  //           fullName: "",
+  //           age: "",
+  //           whatsapp: "",
+  //           email: "",
+  //           city: "",
+  //           gender: "",
+  //           instagram: "",
+  //           shoppingFrequency: "",
+  //         });
+  //       } else {
+  //         throw new Error("Unexpected response from server");
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error("Submission error:", error);
+  //     setSubmitMessage({
+  //       text: `Error: ${
+  //         error.message || "Failed to submit form. Please try again later."
+  //       }`,
+  //       isError: true,
+  //     });
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
 
   // ... rest of your component JSX remains the same ...
   return (

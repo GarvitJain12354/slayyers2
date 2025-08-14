@@ -36,11 +36,26 @@ import ComingSoon from "./Pages/ComingSoon.jsx";
 // import Page4 from "./components/Page1/Page4";
 // import Page5 from "./components/Page1/Page5";
 // import Footer from "./components/Page1/Footer.jsx";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // change to "smooth" if you want smooth scrolling
+    });
+  }, [pathname]);
+
+  return null;
+}
 
 const App = () => {
   return (
     <>
       <div className="w-full z-10 relative overflow-hidden">
+          <ScrollToTop />
         <Routes>
           <Route path="/" index element={<Home />} />
           <Route path="/creator" element={<Creators />} />

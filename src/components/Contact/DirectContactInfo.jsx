@@ -12,13 +12,13 @@ const DirectContactInfo = () => {
         <div>
           <h3 className="text-xl font-bold mb-4">📧 Email Contacts</h3>
           <ul className="space-y-2 text-gray-700 text-sm">
-            <li><span className="font-semibold">General Inquiries:</span> hello@slayyers.com</li>
-            <li><span className="font-semibold">Founder:</span> pankaj@slayyers.com</li>
-            <li><span className="font-semibold">Partnerships:</span> partnerships@slayyers.com</li>
-            <li><span className="font-semibold">Creators:</span> creators@slayyers.com</li>
-            <li><span className="font-semibold">Investors:</span> investors@slayyers.com</li>
-            <li><span className="font-semibold">Careers:</span> careers@slayyers.com</li>
-            <li><span className="font-semibold">Press:</span> press@slayyers.com</li>
+            <li><span className="font-semibold">General Inquiries:</span> connect@slayyers.com</li>
+            <li><span className="font-semibold">Co-Founder:</span> co-founder@slayyers.com</li>
+            <li><span className="font-semibold">Brands:</span> brand@slayyers.com</li>
+            <li><span className="font-semibold">Helps:</span> helpdesk@slayyers.com</li>
+            <li><span className="font-semibold">Feedback:</span> feedback@slayyers.com</li>
+            <li><span className="font-semibold">Administration:</span> admin@slayyers.com</li>
+            {/* <li><span className="font-semibold">Press:</span> press@slayyers.com</li> */}
           </ul>
         </div>
 
